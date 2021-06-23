@@ -1,0 +1,285 @@
+<?php
+
+namespace App\Http\Controllers\lawyer;
+
+use App\Http\Controllers\Controller;
+use App\Models\Client;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
+class ClientController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+
+        $clients = User::select('users.id',
+            'users.first_name',
+            'users.last_name',
+            'users.email',
+            'users.role_id',
+            'clients.client_id',
+            'clients.case_nr',
+            'docusign_url',
+            'clients.co_counsel_client_id_nr',
+            'clients.case_type',
+            'clients.case_status',
+            'clients.injured_party_f_name',
+            'clients.injured_party_l_name',
+            'clients.client_f_name',
+            'clients.client_l_name',
+            'clients.address',
+            'clients.state',
+            'clients.zip_code',
+            'clients.home_phone',
+            'clients.cell_phone',
+            'clients.diagnosis',
+            'clients.date_of_diagnosis',
+            'clients.tentative_sol',
+            'clients.sol_notes',
+            'clients.treating_doctor',
+            'clients.diagnosing_hospital',
+            'clients.date_of_death',
+            'clients.cause_of_death',
+            'clients.next_of_kin',
+            'clients.rel_of_the_client_to_the_deceased',
+            'clients.date_married',
+            'clients.exposure_history_notes',
+            'clients.call_notes',
+            'clients.co_counsel_notes',
+            'clients.lawyer_id',
+            'clients.referred_to'
+        )
+            ->leftJoin('clients', 'clients.client_id', 'users.id')
+            ->where('users.role_id', 3)
+//            ->where('lawyer_id')
+            ->get();
+
+        return view('lawyer/pages/clients/index', compact('clients'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
+        return view('lawyer/pages/clients/create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|string',
+        ]);
+        $data['role_id']  = 3;
+        $data['password'] = Hash::make(123);
+
+        $user = User::create($data);
+
+        $lawyer_id = new Client(['lawyer_id' => Auth::id(), 'client_f_name' => $data['first_name'], 'client_l_name' => $data['last_name']]);
+        $user->client()->save($lawyer_id);
+
+        return redirect()->route('lawyer-clients.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $client = User::select('users.id',
+            'users.first_name',
+            'users.last_name',
+            'users.email',
+            'users.role_id',
+            'clients.client_id',
+            'clients.case_nr',
+            'docusign_url',
+            'clients.co_counsel_client_id_nr',
+            'clients.case_type',
+            'clients.case_status',
+            'clients.injured_party_f_name',
+            'clients.injured_party_l_name',
+            'clients.client_f_name',
+            'clients.client_l_name',
+            'clients.address',
+            'clients.state',
+            'clients.zip_code',
+            'clients.home_phone',
+            'clients.cell_phone',
+            'clients.diagnosis',
+            'clients.date_of_diagnosis',
+            'clients.tentative_sol',
+            'clients.sol_notes',
+            'clients.treating_doctor',
+            'clients.diagnosing_hospital',
+            'clients.date_of_death',
+            'clients.cause_of_death',
+            'clients.next_of_kin',
+            'clients.rel_of_the_client_to_the_deceased',
+            'clients.date_married',
+            'clients.exposure_history_notes',
+            'clients.call_notes',
+            'clients.co_counsel_notes',
+            'clients.lawyer_id',
+            'clients.referred_to'
+        )
+            ->leftJoin('clients', 'clients.client_id', 'users.id')
+            ->where('users.role_id', 3)
+            ->where('users.id', $id)
+            ->first();
+
+        return view('lawyer/pages/clients/show', compact('client'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $client = User::select('users.id',
+            'users.first_name',
+            'users.last_name',
+            'users.email',
+            'users.role_id',
+            'clients.client_id',
+            'clients.case_nr',
+            'docusign_url',
+            'clients.co_counsel_client_id_nr',
+            'clients.case_type',
+            'clients.case_status',
+            'clients.injured_party_f_name',
+            'clients.injured_party_l_name',
+            'clients.client_f_name',
+            'clients.client_l_name',
+            'clients.address',
+            'clients.state',
+            'clients.zip_code',
+            'clients.home_phone',
+            'clients.cell_phone',
+            'clients.diagnosis',
+            'clients.date_of_diagnosis',
+            'clients.tentative_sol',
+            'clients.sol_notes',
+            'clients.treating_doctor',
+            'clients.diagnosing_hospital',
+            'clients.date_of_death',
+            'clients.cause_of_death',
+            'clients.next_of_kin',
+            'clients.rel_of_the_client_to_the_deceased',
+            'clients.date_married',
+            'clients.exposure_history_notes',
+            'clients.call_notes',
+            'clients.co_counsel_notes',
+            'clients.lawyer_id',
+            'clients.referred_to'
+        )
+            ->leftJoin('clients', 'clients.client_id', 'users.id')
+            ->where('users.role_id', 3)
+            ->where('users.id', $id)
+            ->first();
+
+        return view('lawyer/pages/clients/edit', compact('client'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+
+//        dd(324);
+
+        $data = $request->validate([
+            'first_name' => 'sometimes|string',
+            'last_name' => 'sometimes|string',
+            'email' => 'sometimes|string',
+            'case_nr' => 'sometimes',
+            'docusign_url' => 'sometimes',
+            'co_counsel_client_id_nr' => 'sometimes',
+            'case_type' => 'sometimes',
+            'case_status' => 'sometimes',
+            'injured_party_f_name' => 'sometimes',
+            'injured_party_l_name' => 'sometimes',
+            'client_f_name' => 'sometimes',
+            'client_l_name' => 'sometimes',
+            'address' => 'sometimes',
+            'state' => 'sometimes',
+            'zip_code' => 'sometimes',
+            'home_phone' => 'sometimes',
+            'cell_phone' => 'sometimes',
+            'diagnosis' => 'sometimes',
+            'date_of_diagnosis' => 'sometimes',
+            'tentative_sol' => 'sometimes',
+            'sol_notes' => 'sometimes',
+            'treating_doctor' => 'sometimes',
+            'diagnosing_hospital' => 'sometimes',
+            'date_of_death' => 'sometimes',
+            'cause_of_death' => 'sometimes',
+            'next_of_kin' => 'sometimes',
+            'rel_of_the_client_to_the_deceased' => 'sometimes',
+            'date_married' => 'sometimes',
+            'exposure_history_notes' => 'sometimes',
+            'call_notes' => 'sometimes',
+            'co_counsel_notes' => 'sometimes',
+            'referred_to' => 'sometimes'
+        ]);
+
+        if(Hash::check($request->current_password, Auth::user()->password) ) {
+            if($request->new_password == $request->password_confirmation){
+                $data['password'] = Hash::make($request->password_confirmation);
+            }
+        }
+
+        $client = User::where('id', $id)->first();
+        $client->update($data);
+
+        $client_details = Client::where('client_id', $id)->first();
+        $client_details->update($data);
+
+        return redirect()->route('lawyer-clients.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+
+        User::destroy($id);
+
+        return redirect()->route('lawyer-clients.index');
+
+    }
+}
