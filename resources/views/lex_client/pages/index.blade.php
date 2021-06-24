@@ -6,6 +6,7 @@
     <title>AC_project</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
+    <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
     <link href="{{asset('lex_client/css/normalize.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('lex_client/css/webflow.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('lex_client/css/ac-project-f6426e.webflow.css')}}" rel="stylesheet" type="text/css">
