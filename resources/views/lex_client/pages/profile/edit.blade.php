@@ -45,15 +45,68 @@
                 </div>
 
             </div>
+
             <div class="div-block-61">
-                <div class="div-block-63"><label for="state" class="field-label">State</label></div>
-                <div class="div-block-64">
-                    <input type="text" class="text-field-4 w-input" maxlength="256" name="state"  placeholder="State" id="state" value="{{$client->state}}">
+                <div class="div-block-63"><label for="name-8" class="field-label">State</label></div>
+                <div class="div-block-64"><select id="State" name="state" data-name="State" required="" class="select-field-9 w-select">
+                        <option value="{{$client->state}}">Select...</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
                     @error('state')
                     <div style="color: red">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
+
             <div class="div-block-61">
                 <div class="div-block-63"><label for="zip_code" class="field-label">Zip Code</label></div>
                 <div class="div-block-64">
@@ -81,7 +134,7 @@
             </div>
             <div class="div-block-61">
                 <div class="div-block-63"><label for="email" class="field-label">Email</label></div>
-                <div class="div-block-64"><input type="text" class="text-field-4 w-input" maxlength="256" name="email"  placeholder="Email" id="email" value="{{$client->email}}">
+                <div class="div-block-64"><input type="email" class="text-field-4 w-input" maxlength="256" name="email"  placeholder="Email" id="email" value="{{$client->email}}">
                     @error('email')
                     <div style="color: red">{{ $message }}</div>
                     @enderror

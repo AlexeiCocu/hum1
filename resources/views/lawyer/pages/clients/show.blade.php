@@ -159,7 +159,7 @@
                         </div>
                         <div class="col-sm-7 col-lg-6 text-left show_field">
                             <h2 class="h5">
-                                <a class="text-primary" >{{$client->cell_phone}}</a>
+                                <a class="text-primary">{{$client->cell_phone}}</a>
                             </h2>
                         </div>
 
@@ -333,3 +333,5 @@
 
 
 @endsection
+
+
