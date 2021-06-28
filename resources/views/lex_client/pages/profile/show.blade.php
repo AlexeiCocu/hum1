@@ -3,7 +3,7 @@
 <html data-wf-page="60c46315c1d9680cfa7e31bc" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Humingbirdtrail | Profile</title>
+    <title>Hummingbirdtrail | Profile</title>
     <meta content="Case information page" property="og:title">
     <meta content="Case information page" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">

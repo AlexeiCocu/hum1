@@ -3,7 +3,7 @@
 <html data-wf-page="60c756953ccd7e8373908200" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Humingbirdtrail | Edit Profile</title>
+    <title>Hummingbirdtrail | Edit Profile</title>
     <meta content="Edit_client" property="og:title">
     <meta content="Edit_client" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">

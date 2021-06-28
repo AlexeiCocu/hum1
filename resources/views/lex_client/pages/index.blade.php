@@ -3,7 +3,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-wf-page="60c3a5d304798b36f774cbd1" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Humingbirdtrail</title>
+    <title>Hummingbirdtrail</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
@@ -18,7 +18,6 @@
     <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
     <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
 
-
     <!--    calendly-->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <!-- end calendly -->
@@ -26,7 +25,7 @@
     <link rel="stylesheet" id="css-main" href="{{asset('lex_admin/assets/css/codebase.min.css')}}">
 </head>
 <body class="body">
-<div class="section-7"><img src="{{asset('lex_client/images/login_logo.svg')}}" loading="lazy" alt="" class="image-14"></div>
+<div class="section-7"><img src="{{asset('lex_client/images/logo.svg')}}" loading="lazy" alt="" class="image-14"></div>
 <div class="section">
     <div class="main_container w-container">
         <div class="w-layout-grid grid-3">

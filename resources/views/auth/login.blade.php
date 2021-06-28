@@ -62,7 +62,7 @@
 <html data-wf-page="60c3bda4bac0d1845e18908a" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Log in</title>
+    <title>Hummingbirdtrail | Log in</title>
     <meta content="Log in" property="og:title">
     <meta content="Log in" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -74,11 +74,12 @@
     <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:300,regular,500,600,700"]  }});</script>
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-    <link href="{{asset('lex_client/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{asset('lex_client/images/webclip.png')}}" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
+    <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
 </head>
 <body class="body">
-<div class="div-block-22"><img src="https://uploads-ssl.webflow.com/60c26754a1b3e16795377be0/60c39a154c15516124bf8d8b_login_logo.svg" loading="lazy" alt="">
+<div class="div-block-22">
+    <img src="{{asset('lex_client/images/logo.svg')}}" loading="lazy" alt="logo">
     <div class="w-form">
         <form id="email-form" name="email-form" data-name="Email Form" class="form" method="POST" action="{{ route('login') }}">
             @csrf
