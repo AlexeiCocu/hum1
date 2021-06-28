@@ -3,7 +3,7 @@
 <html data-wf-page="60c46315c1d9680cfa7e31bc" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Case information page</title>
+    <title>Humingbirdtrail | Profile</title>
     <meta content="Case information page" property="og:title">
     <meta content="Case information page" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -15,8 +15,8 @@
     <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:300,regular,500,600,700"]  }});</script>
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-    <link href="{{asset('lex_client/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{asset('lex_client/images/webclip.png')}}" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
+    <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
 </head>
 <body class="body">
 <div class="secont-header">
@@ -25,7 +25,7 @@
             <div class="text-block-11">Back</div>
         </a>
         <div class="div-block-24">
-            <div class="my_title1">Case iInformation</div>
+            <div class="my_title1">Case Information</div>
         </div>
     </div>
 </div>

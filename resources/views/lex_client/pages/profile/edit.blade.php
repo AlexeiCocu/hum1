@@ -3,7 +3,7 @@
 <html data-wf-page="60c756953ccd7e8373908200" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
     <meta charset="utf-8">
-    <title>Edit_client</title>
+    <title>Humingbirdtrail | Edit Profile</title>
     <meta content="Edit_client" property="og:title">
     <meta content="Edit_client" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -15,8 +15,8 @@
     <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:300,regular,500,600,700"]  }});</script>
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-    <link href="{{asset('lex_client/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{asset('lex_client/images/webclip.png')}}" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
+    <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
 </head>
 <body class="body">
 <header id="nav" class="sticky-nav">
