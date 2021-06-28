@@ -60,6 +60,7 @@ class HomeController extends Controller
             'lawyers.call_url',
             'lawyers.video_url',
             'lawyers.deposition_url',
+            'lawyers.lawyer_description',
             'lawyers.lawyer_firm_name'
         )
             ->where('users.id', $lawyer_id)

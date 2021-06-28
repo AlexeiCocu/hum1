@@ -281,7 +281,7 @@ class ClientController extends Controller
         $client_details = Client::where('client_id', $id)->first();
         $client_details->update($data);
 
-        return redirect()->route('lawyer-clients.index');
+        return redirect()->route('lawyer-clients.show', $id);
     }
 
     /**

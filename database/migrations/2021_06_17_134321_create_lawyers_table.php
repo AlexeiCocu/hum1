@@ -26,6 +26,7 @@ class CreateLawyersTable extends Migration
             $table->string('phone')->nullable()->default(null);
             $table->string('avatar')->nullable()->default(null);
             $table->string('lawyer_firm_name')->nullable()->default(null);
+            $table->text('lawyer_description')->nullable()->default(null);
             $table->text('call_url')->nullable()->default(null);
             $table->text('video_url')->nullable()->default(null);
             $table->text('deposition_url')->nullable()->default(null);

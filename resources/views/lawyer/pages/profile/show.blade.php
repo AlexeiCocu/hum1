@@ -27,27 +27,28 @@
 
                     <div class="text-left">
                         <h2 class="h5 text-dark-op">
-                            Title:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->title}}</a>
+                            Title:  <a class="text-primary-light">{{$lawyer->title}}</a>
                         </h2>
                         <h2 class="h5 text-dark-op">
-                            Company Name:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->lawyer_firm_name}}</a>
+                            Company Name:  <a class="text-primary-light">{{$lawyer->lawyer_firm_name}}</a>
                         </h2>
                         <h2 class="h5 text-dark-op">
-                            Phone:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->phone}}</a>
+                            Phone:  <a class="text-primary-light">{{$lawyer->phone}}</a>
                         </h2>
                         <h2 class="h5 text-dark-op">
-                            Call URl:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->call_url}}</a>
+                            Call URl:  <a class="text-primary-light" >{{$lawyer->call_url}}</a>
                         </h2>
                         <h2 class="h5 text-dark-op">
-                            Video URl:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->video_url}}</a>
+                            Video URl:  <a class="text-primary-light" >{{$lawyer->video_url}}</a>
                         </h2>
                         <h2 class="h5 text-dark-op">
-                            Deposition URl:  <a class="text-primary-light" href="javascript:void(0)">{{$lawyer->deposition_url}}</a>
+                            Deposition URl:  <a class="text-primary-light">{{$lawyer->deposition_url}}</a>
+                        </h2>
+                        <h2 class="h5 text-dark-op">
+                            Description:  <a class="text-primary-light" >{{$lawyer->lawyer_description}}</a>
                         </h2>
                     </div>
-
                 </div>
-
 
                 <a class="btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5 px-20" href="{{route('lawyer-profile.edit', $lawyer->id)}}">
                     <i class="fa fa-pencil"></i> Edit

@@ -89,22 +89,22 @@
                                     </div>
                                     <div class="custom-file">
                                         <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
-                                        <input type="file" class="custom-file-input" id="profile-settings-avatar" name="avatar" data-toggle="custom-file-input">
-                                        <label class="custom-file-label" for="profile-settings-avatar">Choose new profile picture</label>
+                                        <input type="file" class="custom-file-input" id="avatar" name="avatar" data-toggle="custom-file-input">
+                                        <label class="custom-file-label" for="avatar">Choose new profile picture</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-username">Title</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-username" name="title" placeholder="Enter your Title" value="{{$lawyer->title}}">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control form-control-lg" id="title" name="title" placeholder="Enter your Title" value="{{$lawyer->title}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-name">Phone</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-name" name="phone" placeholder="Enter your phone.." value="{{$lawyer->phone}}">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control form-control-lg" id="phone" name="phone" placeholder="Enter your phone.." value="{{$lawyer->phone}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -117,20 +117,26 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-email">Call URl</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="call_url" placeholder="Enter call URL.." value="{{$lawyer->call_url}}">
+                                    <label for="call_url">Call URl</label>
+                                    <input type="text" class="form-control form-control-lg" id="call_url" name="call_url" placeholder="Enter call URL.." value="{{$lawyer->call_url}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-email">Video URL</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="video_url" placeholder="Enter video URL.." value="{{$lawyer->video_url}}">
+                                    <label for="video_url">Video URL</label>
+                                    <input type="text" class="form-control form-control-lg" id="video_url" name="video_url" placeholder="Enter video URL.." value="{{$lawyer->video_url}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-email">Deposition URL</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="deposition_url" placeholder="Enter your deposition URL.." value="{{$lawyer->deposition_url}}">
+                                    <label for="deposition_url">Deposition URL</label>
+                                    <input type="text" class="form-control form-control-lg" id="deposition_url" name="deposition_url" placeholder="Enter your deposition URL.." value="{{$lawyer->deposition_url}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="lawyer_description">Description</label>
+                                    <textarea type="text" class="form-control form-control-lg" id="lawyer_description" name="lawyer_description" placeholder="Description">{{$lawyer->lawyer_description}}</textarea>
                                 </div>
                             </div>
 
@@ -183,20 +189,20 @@
                         <div class="col-lg-7 offset-lg-1">
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-password">Current Password</label>
-                                    <input type="password" class="form-control form-control-lg" id="profile-settings-password" name="current_password" value="{{$lawyer->password}}">
+                                    <label for="current_password">Current Password</label>
+                                    <input type="password" class="form-control form-control-lg" id="current_password" name="current_password" value="{{$lawyer->password}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-password-new">New Password</label>
-                                    <input type="password" class="form-control form-control-lg" id="profile-settings-password-new" name="new_password">
+                                    <label for="new_password">New Password</label>
+                                    <input type="password" class="form-control form-control-lg" id="new_password" name="new_password">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-password-new-confirm">Confirm New Password</label>
-                                    <input type="password" class="form-control form-control-lg" id="profile-settings-password-new-confirm" name="password_confirmation">
+                                    <label for="password_confirmation">Confirm New Password</label>
+                                    <input type="password" class="form-control form-control-lg" id="password_confirmation" name="password_confirmation">
                                 </div>
                             </div>
                             <div class="form-group row">

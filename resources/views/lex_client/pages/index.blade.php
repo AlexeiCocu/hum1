@@ -86,7 +86,7 @@
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93d5-f774cbd1" class="grid_div-2">
                 <div class="div-block-12">
                     <div class="text-block-21">{{$lawyer->lawyer_firm_name}}</div>
-                    <div class="text-block-22">Our team has a variety of experience and background. We speak Spanish, German, Polish, Russian, and several other languages. We have life experience relevant to your case, including military service, union construction work, and asbestos abatement training.</div>
+                    <div class="text-block-22">{{$lawyer->lawyer_description}}</div>
                 </div>
             </div>
         </div>
@@ -96,21 +96,21 @@
     <div class="container-9 w-container">
 
         <!-- Calendly link widget begin call -->
-        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->call_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->call_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;">
             <img src="{{asset('lex_client/images/phone.svg')}}" alt="" class="image-12">
             <div class="text-block-23">Call</div>
         </a>
         <!-- Calendly link widget end -->
 
         <!-- Calendly link widget begin video -->
-        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->video_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->video_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;">
             <img src="{{asset('lex_client/images/Zoom.svg')}}" alt="zoom btn" class="image-13">
             <div class="text-block-23">Video Call</div>
         </a>
         <!-- Calendly link widget end -->
 
         <!-- Calendly link widget begin deposition -->
-        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->deposition_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->deposition_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;">
             <img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Deposition</div>
         </a>

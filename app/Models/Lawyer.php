@@ -19,7 +19,8 @@ class Lawyer extends Model
         'call_url',
         'video_url',
         'deposition_url',
-        'lawyer_id'
+        'lawyer_id',
+        'lawyer_description'
     ];
 
     public function user_details(){
