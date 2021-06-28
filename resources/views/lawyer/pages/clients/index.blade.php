@@ -99,6 +99,13 @@
     </div>
     <!-- END Dynamic Table Full -->
 
-
-
 @endsection
+
+@push('script')
+    <!-- Page JS Plugins -->
+    <script src="{{asset('lex_admin/assets/js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('lex_admin/assets/js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Page JS Code -->
+    <script src="{{asset('lex_admin/assets/js/pages/be_tables_datatables.min.js')}}"></script>
+@endpush

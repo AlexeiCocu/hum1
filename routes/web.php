@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\admin\LawyerController;
 use App\Http\Controllers\lawyer\ClientController;
+use App\Http\Controllers\lawyer\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,12 +48,13 @@ Route::group(['prefix' => '/', 'middleware' => ['auth', 'checkActive']], functio
     Route::group(['prefix' => 'lawyer', 'middleware' => 'can:access_role,"lawyer"'], function () {
         Route::get('/', [\App\Http\Controllers\lawyer\HomeController::class, 'index'])->name('lawyer-index');
         Route::resource('/clients', ClientController::class)->names('lawyer-clients');
+        Route::resource('/profiles', ProfileController::class)->names('lawyer-profile');
     });
 
     Route::group(['prefix' => 'client', 'middleware' => 'can:access_role,"client"'], function () {
         Route::get('/', [\App\Http\Controllers\user\HomeController::class, 'index'])->name('user-index');
-//        Route::get('/case-information', [CaseInformationController::class, 'index'])->name('case-info');
-//        Route::get('/edit-user-info', [CaseInformationController::class, 'edit'])->name('edit-user');
+        Route::resource('/profiles', \App\Http\Controllers\user\ProfileController::class)->names('client-profile');
+
     });
 
 

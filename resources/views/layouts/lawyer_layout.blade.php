@@ -97,5 +97,6 @@
     webpack is putting everything together at assets/_es6/main/app.js
 -->
 <script src="{{asset('lex_admin/assets/js/codebase.app.min.js')}}"></script>
+@stack('script')
 </body>
 </html>

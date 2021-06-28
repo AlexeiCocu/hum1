@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->co_counsel_client_id_nr}}</a>
+                                <a class="text-primary" >{{$client->co_counsel_client_id_nr}}</a>
                             </h2>
                         </div>
 
@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->case_type}}</a>
+                                <a class="text-primary" >{{$client->case_type}}</a>
                             </h2>
                         </div>
 
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->case_status}}</a>
+                                <a class="text-primary" >{{$client->case_status}}</a>
                             </h2>
                         </div>
 
@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->injured_party_f_name}}</a>
+                                <a class="text-primary" >{{$client->injured_party_f_name}}</a>
                             </h2>
                         </div>
 
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->injured_party_l_name}}</a>
+                                <a class="text-primary">{{$client->injured_party_l_name}}</a>
                             </h2>
                         </div>
 
@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->client_f_name}}</a>
+                                <a class="text-primary" >{{$client->client_f_name}}</a>
                             </h2>
                         </div>
 
@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->client_l_name}}</a>
+                                <a class="text-primary" >{{$client->client_l_name}}</a>
                             </h2>
                         </div>
 
@@ -111,7 +111,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->address}}</a>
+                                <a class="text-primary" >{{$client->address}}</a>
                             </h2>
                         </div>
 
@@ -122,7 +122,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->state}}</a>
+                                <a class="text-primary" >{{$client->state}}</a>
                             </h2>
                         </div>
 
@@ -133,7 +133,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->zip_code}}</a>
+                                <a class="text-primary" >{{$client->zip_code}}</a>
                             </h2>
                         </div>
 
@@ -144,7 +144,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->home_phone}}</a>
+                                <a class="text-primary" >{{$client->home_phone}}</a>
                             </h2>
                         </div>
 
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->cell_phone}}</a>
+                                <a class="text-primary" >{{$client->cell_phone}}</a>
                             </h2>
                         </div>
 
@@ -166,7 +166,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->diagnosis}}</a>
+                                <a class="text-primary" >{{$client->diagnosis}}</a>
                             </h2>
                         </div>
 
@@ -177,7 +177,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->date_of_diagnosis}}</a>
+                                <a class="text-primary" >{{$client->date_of_diagnosis}}</a>
                             </h2>
                         </div>
 
@@ -188,7 +188,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->tentative_sol}}</a>
+                                <a class="text-primary" >{{$client->tentative_sol}}</a>
                             </h2>
                         </div>
 
@@ -199,7 +199,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->treating_doctor}}</a>
+                                <a class="text-primary" >{{$client->treating_doctor}}</a>
                             </h2>
                         </div>
 
@@ -210,7 +210,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->diagnosing_hospital}}</a>
+                                <a class="text-primary" >{{$client->diagnosing_hospital}}</a>
                             </h2>
                         </div>
 
@@ -221,7 +221,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->date_of_death}}</a>
+                                <a class="text-primary" >{{$client->date_of_death}}</a>
                             </h2>
                         </div>
 
@@ -232,7 +232,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->cause_of_death}}</a>
+                                <a class="text-primary" >{{$client->cause_of_death}}</a>
                             </h2>
                         </div>
 
@@ -243,7 +243,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->next_of_kin}}</a>
+                                <a class="text-primary" >{{$client->next_of_kin}}</a>
                             </h2>
                         </div>
 
@@ -254,7 +254,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->rel_of_the_client_to_the_deceased}}</a>
+                                <a class="text-primary" >{{$client->rel_of_the_client_to_the_deceased}}</a>
                             </h2>
                         </div>
 
@@ -265,7 +265,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->date_married}}</a>
+                                <a class="text-primary">{{$client->date_married}}</a>
                             </h2>
                         </div>
 
@@ -276,7 +276,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->exposure_history_notes}}</a>
+                                <a class="text-primary" >{{$client->exposure_history_notes}}</a>
                             </h2>
                         </div>
 
@@ -287,7 +287,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->call_notes}}</a>
+                                <a class="text-primary" >{{$client->call_notes}}</a>
                             </h2>
                         </div>
 
@@ -298,7 +298,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->co_counsel_notes}}</a>
+                                <a class="text-primary" >{{$client->co_counsel_notes}}</a>
                             </h2>
                         </div>
 
@@ -309,7 +309,7 @@
                         </div>
                         <div class="col-6 text-left">
                             <h2 class="h5">
-                                <a class="text-primary" href="javascript:void(0)">{{$client->referred_to}}</a>
+                                <a class="text-primary" >{{$client->referred_to}}</a>
                             </h2>
                         </div>
                     </div>

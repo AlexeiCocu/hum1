@@ -13,6 +13,7 @@ class Client extends Model
 
     protected $fillable = [
         'client_id',
+        'lawyer_id',
         'case_nr',
         'co_counsel_client_id_nr',
         'case_type',
@@ -41,11 +42,14 @@ class Client extends Model
         'exposure_history_notes',
         'call_notes',
         'co_counsel_notes',
-        'lawyer_id',
         'referred_to'
     ];
 
-    public function user_details(){
-        return $this->belongsTo(User::class, 'client_id');
+
+    public function user()
+    {
+        $this->belongsTo(User::class);
     }
+
+
 }

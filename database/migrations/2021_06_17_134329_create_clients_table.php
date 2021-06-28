@@ -16,10 +16,16 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('client_id')->index();
             $table->foreign('client_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+
+            $table->unsignedBigInteger('lawyer_id');
+            $table->foreign('lawyer_id')
+                ->references('lawyer_id')
+                ->on('lawyers')
                 ->onDelete('cascade');
 
             $table->string('case_nr')->nullable()->default(null);
@@ -27,6 +33,7 @@ class CreateClientsTable extends Migration
             $table->string('case_type')->nullable()->default(null);
             $table->string('case_status')->nullable()->default(null);
             $table->string('docusign_url')->nullable()->default(null);
+            $table->boolean('docusign_btn_pressed')->default(0);
             $table->string('injured_party_f_name')->nullable()->default(null);
             $table->string('injured_party_l_name')->nullable()->default(null);
             $table->string('client_f_name');
@@ -50,7 +57,6 @@ class CreateClientsTable extends Migration
             $table->text('exposure_history_notes')->nullable()->default(null);
             $table->text('call_notes')->nullable()->default(null);
             $table->text('co_counsel_notes')->nullable()->default(null);
-            $table->string('lawyer_id');
             $table->string('referred_to')->nullable()->default(null);
 
             $table->timestamps();

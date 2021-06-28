@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\lawyer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Lawyer;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
-class LawyerController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,26 +19,7 @@ class LawyerController extends Controller
      */
     public function index()
     {
-        $lawyers = User::select('users.id',
-            'users.first_name',
-            'users.last_name',
-            'users.email',
-            'users.role_id',
-            'lawyers.title',
-            'lawyers.phone',
-            'lawyers.avatar',
-            'lawyers.calendar_url',
-            'lawyers.lawyer_firm_name',
-            'lawyers.call_url',
-            'lawyers.video_url',
-            'lawyers.deposition_url',
-            'lawyers.lawyer_id'
-        )
-            ->leftJoin('lawyers', 'lawyers.lawyer_id', 'users.id')
-            ->where('users.role_id', 2)
-            ->get();
-
-        return view('lex_admin/pages/lawyers/index', compact('lawyers'));
+        //
     }
 
     /**
@@ -48,39 +29,24 @@ class LawyerController extends Controller
      */
     public function create()
     {
-        return view('lex_admin/pages/lawyers/create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|string',
-        ]);
-
-        $data['role_id'] = 2;
-        $data['password'] = Hash::make(123);
-
-        $user = User::create($data);
-
-        $title = new Lawyer(['title' => 'Lawyer']);
-        $user->lawyerDetails()->save($title);
-
-
-        return redirect()->route('admin-lawyers.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -101,17 +67,18 @@ class LawyerController extends Controller
             'lawyers.lawyer_id'
         )
             ->leftJoin('lawyers', 'lawyers.lawyer_id', 'users.id')
+            ->where('lawyers.lawyer_id', $id)
             ->where('users.role_id', 2)
-            ->where('users.id', $id)
             ->first();
 
-        return view('lex_admin/pages/lawyers/show', compact('lawyer'));
+
+        return view('lawyer/pages/profile/show', compact('lawyer'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -137,14 +104,15 @@ class LawyerController extends Controller
             ->where('users.id', $id)
             ->first();
 
-        return view('lex_admin/pages/lawyers/edit', compact('lawyer'));
+
+        return view('lawyer/pages/profile/edit', compact('lawyer'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -171,12 +139,6 @@ class LawyerController extends Controller
             }
         }
 
-//        if (!Hash::check($request->current_password, Auth::user()->password)) {
-//            throw ValidationException::withMessages([
-//                'current_password' => ['Current provided password dont match with our records'],
-//            ]);
-//        }
-
         $lawyer = User::where('id', $id)->first();
 
         if ($request->hasFile('avatar')) {
@@ -190,26 +152,17 @@ class LawyerController extends Controller
         $lawyer_details->update($data);
 
 
-        return redirect()->route('admin-lawyers.index');
+        return redirect()->route('lawyer-profile.show', $id);
     }
-
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $user = User::select('users.id')
-            ->where('users.id', $id)
-            ->where('users.role_id', 2)
-            ->first();
-
-        Storage::disk('avatar')->delete($user->avatar);
-        User::destroy($id);
-
-        return redirect()->route('admin-lawyers.index');
+        //
     }
 }

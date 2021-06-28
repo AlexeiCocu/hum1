@@ -56,11 +56,11 @@ class User extends Authenticatable
         return $this->role()->where('role', $role)->first() ? true : false;
     }
 
-    public function lawyer(){
+    public function lawyerDetails(){
         return $this->hasOne(Lawyer::class, 'lawyer_id');
     }
 
-    public function client(){
+    public function clientDetails(){
         return $this->hasOne(Client::class, 'client_id');
     }
 }

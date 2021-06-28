@@ -26,4 +26,8 @@ class Lawyer extends Model
     public function user_details(){
         return $this->belongsTo(User::class, 'lawyer_id');
     }
+
+    public function lawyerClients(){
+        return $this->hasMany(Client::class, 'lawyer_id', 'id');
+    }
 }

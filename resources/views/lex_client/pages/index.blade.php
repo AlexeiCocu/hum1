@@ -16,6 +16,8 @@
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
     <link href="{{asset('lex_client/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
     <link href="{{asset('lex_client/images/webclip.png')}}" rel="apple-touch-icon">
+
+    <link rel="stylesheet" id="css-main" href="{{asset('lex_admin/assets/css/codebase.min.css')}}">
 </head>
 <body class="body">
 <div class="section-7"><img src="{{asset('lex_client/images/login_logo.svg')}}" loading="lazy" alt="" class="image-14"></div>
@@ -36,9 +38,9 @@
                     </div>
                     <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93ae-f774cbd1" class="div-block-3">
                         <div class="div-block-34">
-                            <div class="head-2 info_blocl">145678</div>
-                            <div class="head-2 info_blocl">Asbestos</div>
-                            <div class="head-2 info_blocl">Mesothelioma</div>
+                            <div class="head-2 info_blocl">{{$client->case_nr}}</div>
+                            <div class="head-2 info_blocl">{{$client->case_type}}</div>
+                            <div class="head-2 info_blocl">{{$client->diagnosis}}</div>
                         </div>
                     </div>
                 </div>
@@ -52,28 +54,33 @@
                     </div>
                 </div>
             </div>
+
+            @isset($client->docusign_url)
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93c3-f774cbd1" class="grid_div-2 cta_div">
                 <div class="div-block-8">
                     <div class="div-block-9">
                         <div class="head-2 cta_title">Hi, You have documents to sign!</div>
                         <div class="text-block-22">Our team has a variety of experience and background. We speak Spanish, German, Polish, Russian, and several other languages. We have life experience relevant to your case, including military service, union construction work, and asbestos abatement training.</div>
                     </div>
-                    <a href="#" class="div-block-10 w-inline-block"><img src="https://uploads-ssl.webflow.com/60c26754a1b3e16795377be0/60c27bc86779e1e82088cc64_kisspng-logo-docusign-nasdaq-docu-brand-font-partners-prolocity-5b6d501e353441%201.svg" loading="lazy" alt="" class="image-2">
+                    <a href="{{$client->docusign_url}}" class="div-block-10 w-inline-block" target="_blank"><img src="{{asset('lex_client/images/docsign.svg')}}" loading="lazy" alt="" class="image-2">
                         <div class="main_btn-2">
                             <div class="text-block-26">Sign Now</div>
                         </div>
                     </a>
                 </div>
             </div>
+            @endisset
+
+
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93ce-f774cbd1" class="grid_div-2">
-                <div class="div-block-16"><img src="https://uploads-ssl.webflow.com/60c26754a1b3e16795377be0/60c27e519ae56a054bf647bb_attorney-aaron-dickey%202.svg" loading="lazy" alt="" class="image-3">
-                    <div class="head-2 lawyer_name">Aaron Dickey</div>
-                    <div class="text-block-8">Managing Partner</div>
+                <div class="div-block-16"><img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" loading="lazy" alt="lawyer image" class="im age-3 img-avatar img-avatar96">
+                    <div class="head-2 lawyer_name">{{$lawyer->first_name}} {{$lawyer->last_name}}</div>
+                    <div class="text-block-8">{{$lawyer->title}}</div>
                 </div>
             </div>
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93d5-f774cbd1" class="grid_div-2">
                 <div class="div-block-12">
-                    <div class="text-block-21">Dickey Law Firm, LLC</div>
+                    <div class="text-block-21">{{$lawyer->lawyer_firm_name}}</div>
                     <div class="text-block-22">Our team has a variety of experience and background. We speak Spanish, German, Polish, Russian, and several other languages. We have life experience relevant to your case, including military service, union construction work, and asbestos abatement training.</div>
                 </div>
             </div>
@@ -82,16 +89,16 @@
 </div>
 <footer id="footer" class="footer">
     <div class="container-9 w-container">
-        <a href="#" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/phone.svg')}}" loading="lazy" alt="" class="image-12">
+        <a href="{{$lawyer->call_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/phone.svg')}}" loading="lazy" alt="" class="image-12">
             <div class="text-block-23">Call</div>
         </a>
-        <a href="#" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <a href="{{$lawyer->video_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Video Call</div>
         </a>
-        <a href="#" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <a href="{{$lawyer->deposition_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Deposition</div>
         </a>
-        <a href="case-information-page.html" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Profile.svg')}}" loading="lazy" alt="" class="image-13">
+        <a href="{{route('client-profile.show', $client->id)}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Profile.svg')}}" loading="lazy" alt="" class="image-13">
             <div class="text-block-23">Profile</div>
         </a>
         <a class="div-block-67 w-inline-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  href="{{ route('logout') }}">

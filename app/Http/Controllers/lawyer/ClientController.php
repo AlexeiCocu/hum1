@@ -59,7 +59,7 @@ class ClientController extends Controller
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
-//            ->where('lawyer_id')
+            ->where('lawyer_id', Auth::user()->id)
             ->get();
 
         return view('lawyer/pages/clients/index', compact('clients'));
@@ -95,7 +95,7 @@ class ClientController extends Controller
         $user = User::create($data);
 
         $lawyer_id = new Client(['lawyer_id' => Auth::id(), 'client_f_name' => $data['first_name'], 'client_l_name' => $data['last_name']]);
-        $user->client()->save($lawyer_id);
+        $user->clientDetails()->save($lawyer_id);
 
         return redirect()->route('lawyer-clients.index');
     }

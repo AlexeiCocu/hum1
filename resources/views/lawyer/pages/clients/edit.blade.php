@@ -13,7 +13,7 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">
-                        Delete
+                        Delete Client
                     </button>
                 </form>
             </div>
@@ -257,6 +257,53 @@
                 </div>
             </div>
         @endif
+
+        <!-- Delete Docusign URl -->
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">
+                    <i class="fa fa-asterisk mr-5 text-muted"></i> Delete DocuSign URL
+                </h3>
+            </div>
+            <div class="block-content">
+                <form action="{{route('lawyer-clients.update', $client->id)}}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <div class="row items-push">
+                        <div class="col-lg-1">
+
+                        </div>
+                        <div class="col-lg-7 offset-lg-1">
+
+                            <input type="hidden" name="docusign_url" value="{{null}}">
+
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-alt-primary">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                @if($errors->any())
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="aler alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <!-- END Delete Docusign URl -->
 
 
         <!-- Change Password -->

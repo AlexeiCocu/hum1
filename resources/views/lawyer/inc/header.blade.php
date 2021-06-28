@@ -12,9 +12,9 @@
 
             <!-- Open Search Section -->
             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-            <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
-                <i class="fa fa-search"></i>
-            </button>
+{{--            <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">--}}
+{{--                <i class="fa fa-search"></i>--}}
+{{--            </button>--}}
             <!-- END Open Search Section -->
         </div>
         <!-- END Left Section -->
@@ -27,9 +27,9 @@
                     Profile<i class="fa fa-angle-down ml-5"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
-{{--                    <a class="dropdown-item" href="javascript:void(0)">--}}
-{{--                        <i class="si si-user mr-5"></i> Profile--}}
-{{--                    </a>--}}
+                    <a class="dropdown-item" href="{{route('lawyer-profile.show', \Illuminate\Support\Facades\Auth::user()->id)}}">
+                        <i class="si si-user mr-5"></i> Profile
+                    </a>
 {{--                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">--}}
 {{--                        <span><i class="si si-envelope-open mr-5"></i> Inbox</span>--}}
 {{--                        <span class="badge badge-primary">3</span>--}}
