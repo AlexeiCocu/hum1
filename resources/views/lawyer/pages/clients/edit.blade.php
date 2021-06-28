@@ -47,6 +47,37 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
+                                    <label for="profile-settings-email">Address:</label>
+                                    <input type="text" class="form-control form-control-lg" name="address" value="{{$client->address}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="profile-settings-email">State:</label>
+                                    <input type="text" class="form-control form-control-lg" name="state" value="{{$client->state}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="profile-settings-email">Zip Code:</label>
+                                    <input type="text" class="form-control form-control-lg" name="zip_code" value="{{$client->zip_code}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="profile-settings-email">Home Phone:</label>
+                                    <input type="text" class="form-control form-control-lg" name="home_phone" value="{{$client->home_phone}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="profile-settings-email">Cell Phone:</label>
+                                    <input type="text" class="form-control form-control-lg" name="cell_phone"  value="{{$client->cell_phone}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
                                     <button type="submit" class="btn btn-alt-primary">Update</button>
                                 </div>
                             </div>
@@ -114,36 +145,8 @@
                                     <input type="text" class="form-control form-control-lg" name="injured_party_l_name" value="{{$client->injured_party_l_name}}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">Address:</label>
-                                    <input type="text" class="form-control form-control-lg" name="address" value="{{$client->address}}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">State:</label>
-                                    <input type="text" class="form-control form-control-lg" name="state" value="{{$client->state}}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">Zip Code:</label>
-                                    <input type="text" class="form-control form-control-lg" name="zip_code" value="{{$client->zip_code}}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">Home Phone:</label>
-                                    <input type="text" class="form-control form-control-lg" name="home_phone" value="{{$client->home_phone}}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">Cell Phone:</label>
-                                    <input type="text" class="form-control form-control-lg" name="cell_phone"  value="{{$client->cell_phone}}">
-                                </div>
-                            </div>
+
+
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-email">Diagnosis:</label>

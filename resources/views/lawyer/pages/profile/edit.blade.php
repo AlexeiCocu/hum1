@@ -90,7 +90,7 @@
                                     <div class="custom-file">
                                         <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
                                         <input type="file" class="custom-file-input" id="profile-settings-avatar" name="avatar" data-toggle="custom-file-input">
-                                        <label class="custom-file-label" for="profile-settings-avatar">Choose new avatar</label>
+                                        <label class="custom-file-label" for="profile-settings-avatar">Choose new profile picture</label>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="profile-settings-email">Company Name</label>
+                                    <label for="profile-settings-email">Law Firm Name</label>
                                     <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="lawyer_firm_name" placeholder="Enter company name.." value="{{$lawyer->lawyer_firm_name}}">
                                 </div>
                             </div>
@@ -133,12 +133,7 @@
                                     <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="deposition_url" placeholder="Enter your deposition URL.." value="{{$lawyer->deposition_url}}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <label for="profile-settings-email">Calendar URL</label>
-                                    <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="calendar_url" placeholder="Enter your calendar URL.." value="{{$lawyer->calendar_url}}">
-                                </div>
-                            </div>
+
 
                             <div class="form-group row">
                                 <div class="col-12">

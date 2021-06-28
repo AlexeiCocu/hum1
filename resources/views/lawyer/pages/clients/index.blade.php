@@ -27,7 +27,13 @@
                         <td class="d-none d-sm-table-cell">{{$client->email}}</td>
                         <td class="d-none d-sm-table-cell text-center">
 
-                            <a href="" class="btn btn-rounded btn-alt-danger min-width-125" data-toggle="modal" data-target="#modal-fadein_{{$client->id}}">Sign</a>
+                            @if(!isset($client->docusign_url))
+                                <a href="#." class="btn btn-rounded btn-alt-danger min-width-125" data-toggle="modal" data-target="#modal-fadein_{{$client->id}}">Sign</a>
+                            @else
+                                <a href="#." class="btn btn-rounded btn-alt-success min-width-125" data-toggle="modal" data-target="#modal2-fadein_{{$client->id}}">
+                                    <img src="{{asset('lex_client/images/docsign.svg')}}" alt="doc sign img">
+                                </a>
+                            @endif
 
                         </td>
                         <td class="text-center">
@@ -69,6 +75,40 @@
                                         <button type="submit" class="btn btn-alt-success">
                                             <i class="fa fa-check"></i>Perfect
                                         </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Fade In Modal -->
+
+                    <!-- Fade In Modal 2 -->
+                    <div class="modal fade" id="modal2-fadein_{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="modal2-fadein" aria-hidden="true">
+                        <div class="modal-dialog mt-100" role="document">
+                            <div class="modal-content">
+                                <form action="{{route('lawyer-clients.update', $client->id)}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="block block-themed block-transparent mb-0">
+                                        <input type="hidden" name="docusign_url" value="{{null}}">
+                                        <div class="block-header bg-primary-dark">
+                                            <h3 class="block-title">Docusign link URl</h3>
+                                            <div class="block-options">
+                                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                                    <i class="si si-close"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 100%; text-align: center; padding-top: 20px">
+                                        <img src="{{asset('lex_client/images/docsign.svg')}}" alt="doc sign img" style="min-width: 150px; max-width: 200px">
+                                    </div>
+
+                                    <div class="modal-footer d-flex justify-content-center" style="padding-top: 30px; padding-bottom: 20px">
+                                        <button type="submit" class="btn btn-alt-danger">
+                                            Delete URL?
+                                        </button>
+                                        <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </form>
                             </div>

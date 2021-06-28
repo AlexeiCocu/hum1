@@ -27,7 +27,6 @@ class LawyerController extends Controller
             'lawyers.title',
             'lawyers.phone',
             'lawyers.avatar',
-            'lawyers.calendar_url',
             'lawyers.lawyer_firm_name',
             'lawyers.call_url',
             'lawyers.video_url',
@@ -93,7 +92,6 @@ class LawyerController extends Controller
             'lawyers.title',
             'lawyers.phone',
             'lawyers.avatar',
-            'lawyers.calendar_url',
             'lawyers.lawyer_firm_name',
             'lawyers.call_url',
             'lawyers.video_url',
@@ -125,7 +123,6 @@ class LawyerController extends Controller
             'lawyers.title',
             'lawyers.phone',
             'lawyers.avatar',
-            'lawyers.calendar_url',
             'lawyers.lawyer_firm_name',
             'lawyers.call_url',
             'lawyers.video_url',
@@ -159,11 +156,9 @@ class LawyerController extends Controller
             'call_url' => 'sometimes',
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
-            'calendar_url' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
             'password' => 'confirmed'
         ]);
-
 
         if (Hash::check($request->current_password, Auth::user()->password) ) {
             if($request->new_password == $request->password_confirmation){

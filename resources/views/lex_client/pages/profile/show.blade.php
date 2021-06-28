@@ -78,6 +78,32 @@
             </div>
         </div>
     </div>
+
+    <div class="div-block-69">
+        <div class="div-block-70">
+            <div class="div-block-72 case_label_left">
+                <div class="text-block-24">Injury/Diagnosis</div>
+            </div>
+        </div>
+        <div class="div-block-70">
+            <div class="div-block-72 case_label_right">
+                <div class="text-block-24">{{$client->diagnosis}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="div-block-69">
+        <div class="div-block-70">
+            <div class="div-block-72 case_label_left">
+                <div class="text-block-24">Date of diagnosis</div>
+            </div>
+        </div>
+        <div class="div-block-70">
+            <div class="div-block-72 case_label_right">
+                <div class="text-block-24">{{$client->date_of_diagnosis}}</div>
+            </div>
+        </div>
+    </div>
+
     <div class="div-block-69">
         <div class="div-block-70">
             <div class="div-block-72 case_label_left">
@@ -150,30 +176,7 @@
             </div>
         </div>
     </div>
-    <div class="div-block-69">
-        <div class="div-block-70">
-            <div class="div-block-72 case_label_left">
-                <div class="text-block-24">Injury/Diagnosis</div>
-            </div>
-        </div>
-        <div class="div-block-70">
-            <div class="div-block-72 case_label_right">
-                <div class="text-block-24">{{$client->diagnosis}}</div>
-            </div>
-        </div>
-    </div>
-    <div class="div-block-69">
-        <div class="div-block-70">
-            <div class="div-block-72 case_label_left">
-                <div class="text-block-24">Date of diagnosis</div>
-            </div>
-        </div>
-        <div class="div-block-70">
-            <div class="div-block-72 case_label_right">
-                <div class="text-block-24">{{$client->date_of_diagnosis}}</div>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div class="section-4">
     <div class="container-3 w-container">

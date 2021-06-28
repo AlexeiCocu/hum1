@@ -63,4 +63,9 @@ class User extends Authenticatable
     public function clientDetails(){
         return $this->hasOne(Client::class, 'client_id');
     }
+
+    public function history()
+    {
+        return $this->hasOne(History::class, 'client_id');
+    }
 }

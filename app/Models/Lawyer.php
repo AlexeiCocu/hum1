@@ -19,7 +19,6 @@ class Lawyer extends Model
         'call_url',
         'video_url',
         'deposition_url',
-        'calendar_url',
         'lawyer_id'
     ];
 

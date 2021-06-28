@@ -4,6 +4,7 @@ namespace App\Http\Controllers\lawyer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\History;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,13 +27,7 @@ class ClientController extends Controller
             'users.email',
             'users.role_id',
             'clients.client_id',
-            'clients.case_nr',
-            'docusign_url',
-            'clients.co_counsel_client_id_nr',
-            'clients.case_type',
-            'clients.case_status',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
+            'clients.lawyer_id',
             'clients.client_f_name',
             'clients.client_l_name',
             'clients.address',
@@ -40,26 +35,33 @@ class ClientController extends Controller
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.diagnosis',
-            'clients.date_of_diagnosis',
-            'clients.tentative_sol',
-            'clients.sol_notes',
-            'clients.treating_doctor',
-            'clients.diagnosing_hospital',
-            'clients.date_of_death',
-            'clients.cause_of_death',
-            'clients.next_of_kin',
-            'clients.rel_of_the_client_to_the_deceased',
-            'clients.date_married',
-            'clients.exposure_history_notes',
-            'clients.call_notes',
-            'clients.co_counsel_notes',
-            'clients.lawyer_id',
-            'clients.referred_to'
+            'histories.case_nr',
+            'histories.docusign_url',
+            'histories.co_counsel_client_id_nr',
+            'histories.case_type',
+            'histories.case_status',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.diagnosis',
+            'histories.date_of_diagnosis',
+            'histories.tentative_sol',
+            'histories.sol_notes',
+            'histories.treating_doctor',
+            'histories.diagnosing_hospital',
+            'histories.date_of_death',
+            'histories.cause_of_death',
+            'histories.next_of_kin',
+            'histories.rel_of_the_client_to_the_deceased',
+            'histories.date_married',
+            'histories.exposure_history_notes',
+            'histories.call_notes',
+            'histories.co_counsel_notes',
+            'histories.referred_to'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
-            ->where('lawyer_id', Auth::user()->id)
+            ->where('clients.lawyer_id', Auth::user()->id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->get();
 
         return view('lawyer/pages/clients/index', compact('clients'));
@@ -94,8 +96,12 @@ class ClientController extends Controller
 
         $user = User::create($data);
 
+//        dd(Auth::id());
+
         $lawyer_id = new Client(['lawyer_id' => Auth::id(), 'client_f_name' => $data['first_name'], 'client_l_name' => $data['last_name']]);
+        $history = new History(['lawyer_id' => Auth::id()]);
         $user->clientDetails()->save($lawyer_id);
+        $user->history()->save($history);
 
         return redirect()->route('lawyer-clients.index');
     }
@@ -114,13 +120,6 @@ class ClientController extends Controller
             'users.email',
             'users.role_id',
             'clients.client_id',
-            'clients.case_nr',
-            'docusign_url',
-            'clients.co_counsel_client_id_nr',
-            'clients.case_type',
-            'clients.case_status',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
             'clients.client_f_name',
             'clients.client_l_name',
             'clients.address',
@@ -128,26 +127,35 @@ class ClientController extends Controller
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.diagnosis',
-            'clients.date_of_diagnosis',
-            'clients.tentative_sol',
-            'clients.sol_notes',
-            'clients.treating_doctor',
-            'clients.diagnosing_hospital',
-            'clients.date_of_death',
-            'clients.cause_of_death',
-            'clients.next_of_kin',
-            'clients.rel_of_the_client_to_the_deceased',
-            'clients.date_married',
-            'clients.exposure_history_notes',
-            'clients.call_notes',
-            'clients.co_counsel_notes',
-            'clients.lawyer_id',
-            'clients.referred_to'
+
+            'histories.case_nr',
+            'histories.docusign_url',
+            'histories.co_counsel_client_id_nr',
+            'histories.case_type',
+            'histories.case_status',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.lawyer_id',
+            'histories.diagnosis',
+            'histories.date_of_diagnosis',
+            'histories.tentative_sol',
+            'histories.sol_notes',
+            'histories.treating_doctor',
+            'histories.diagnosing_hospital',
+            'histories.date_of_death',
+            'histories.cause_of_death',
+            'histories.next_of_kin',
+            'histories.rel_of_the_client_to_the_deceased',
+            'histories.date_married',
+            'histories.exposure_history_notes',
+            'histories.call_notes',
+            'histories.co_counsel_notes',
+            'histories.referred_to'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
             ->where('users.id', $id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->first();
 
         return view('lawyer/pages/clients/show', compact('client'));
@@ -166,14 +174,8 @@ class ClientController extends Controller
             'users.last_name',
             'users.email',
             'users.role_id',
+
             'clients.client_id',
-            'clients.case_nr',
-            'docusign_url',
-            'clients.co_counsel_client_id_nr',
-            'clients.case_type',
-            'clients.case_status',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
             'clients.client_f_name',
             'clients.client_l_name',
             'clients.address',
@@ -181,26 +183,35 @@ class ClientController extends Controller
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.diagnosis',
-            'clients.date_of_diagnosis',
-            'clients.tentative_sol',
-            'clients.sol_notes',
-            'clients.treating_doctor',
-            'clients.diagnosing_hospital',
-            'clients.date_of_death',
-            'clients.cause_of_death',
-            'clients.next_of_kin',
-            'clients.rel_of_the_client_to_the_deceased',
-            'clients.date_married',
-            'clients.exposure_history_notes',
-            'clients.call_notes',
-            'clients.co_counsel_notes',
-            'clients.lawyer_id',
-            'clients.referred_to'
+
+            'histories.case_nr',
+            'histories.docusign_url',
+            'histories.lawyer_id',
+            'histories.co_counsel_client_id_nr',
+            'histories.case_type',
+            'histories.case_status',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.diagnosis',
+            'histories.date_of_diagnosis',
+            'histories.tentative_sol',
+            'histories.sol_notes',
+            'histories.treating_doctor',
+            'histories.diagnosing_hospital',
+            'histories.date_of_death',
+            'histories.cause_of_death',
+            'histories.next_of_kin',
+            'histories.rel_of_the_client_to_the_deceased',
+            'histories.date_married',
+            'histories.exposure_history_notes',
+            'histories.call_notes',
+            'histories.co_counsel_notes',
+            'histories.referred_to'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
             ->where('users.id', $id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->first();
 
         return view('lawyer/pages/clients/edit', compact('client'));
@@ -215,13 +226,21 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-//        dd(324);
-
         $data = $request->validate([
             'first_name' => 'sometimes|string',
             'last_name' => 'sometimes|string',
             'email' => 'sometimes|string',
+        ]);
+
+        $userClient = $request->validate([
+            'address' => 'sometimes',
+            'state' => 'sometimes',
+            'zip_code' => 'sometimes',
+            'home_phone' => 'sometimes',
+            'cell_phone' => 'sometimes',
+        ]);
+
+        $clientHistory = $request->validate([
             'case_nr' => 'sometimes',
             'docusign_url' => 'sometimes',
             'co_counsel_client_id_nr' => 'sometimes',
@@ -231,11 +250,6 @@ class ClientController extends Controller
             'injured_party_l_name' => 'sometimes',
             'client_f_name' => 'sometimes',
             'client_l_name' => 'sometimes',
-            'address' => 'sometimes',
-            'state' => 'sometimes',
-            'zip_code' => 'sometimes',
-            'home_phone' => 'sometimes',
-            'cell_phone' => 'sometimes',
             'diagnosis' => 'sometimes',
             'date_of_diagnosis' => 'sometimes',
             'tentative_sol' => 'sometimes',
@@ -261,6 +275,8 @@ class ClientController extends Controller
 
         $client = User::where('id', $id)->first();
         $client->update($data);
+        $client->clientDetails()->update($userClient);
+        $client->history()->update($clientHistory);
 
         $client_details = Client::where('client_id', $id)->first();
         $client_details->update($data);
@@ -276,10 +292,7 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-
         User::destroy($id);
-
         return redirect()->route('lawyer-clients.index');
-
     }
 }

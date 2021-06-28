@@ -57,28 +57,30 @@ class ProfileController extends Controller
             'users.email',
             'users.role_id',
             'clients.client_id',
-            'clients.case_nr',
-            'clients.co_counsel_client_id_nr',
-            'clients.case_type',
-            'clients.case_status',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
+            'clients.client_f_name',
+            'clients.client_l_name',
             'clients.address',
             'clients.state',
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.diagnosis',
-            'clients.date_of_diagnosis',
+            'clients.lawyer_id',
 
-            'clients.client_f_name',
-            'clients.client_l_name',
-
-            'clients.lawyer_id'
+            'histories.case_nr',
+            'histories.case_type',
+            'histories.co_counsel_client_id_nr',
+            'histories.diagnosis',
+            'histories.case_status',
+            'histories.docusign_url',
+            'histories.docusign_btn_pressed',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.updated_at'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
-            ->where('users.id', $id)
+            ->where('users.id', Auth::user()->id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->first();
 
         return view('lex_client/pages/profile/show', compact('client'));
@@ -99,28 +101,30 @@ class ProfileController extends Controller
             'users.email',
             'users.role_id',
             'clients.client_id',
-            'clients.case_nr',
-            'clients.co_counsel_client_id_nr',
-            'clients.case_type',
-            'clients.case_status',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
+            'clients.client_f_name',
+            'clients.client_l_name',
             'clients.address',
             'clients.state',
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.diagnosis',
-            'clients.date_of_diagnosis',
+            'clients.lawyer_id',
 
-            'clients.client_f_name',
-            'clients.client_l_name',
-
-            'clients.lawyer_id'
+            'histories.case_nr',
+            'histories.case_type',
+            'histories.co_counsel_client_id_nr',
+            'histories.diagnosis',
+            'histories.case_status',
+            'histories.docusign_url',
+            'histories.docusign_btn_pressed',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.updated_at'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
-            ->where('users.id', $id)
+            ->where('users.id', Auth::user()->id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->first();
 
         return view('lex_client/pages/profile/edit', compact('client'));

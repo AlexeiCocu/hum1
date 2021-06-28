@@ -17,6 +17,10 @@
     <link href="{{asset('lex_client/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
     <link href="{{asset('lex_client/images/webclip.png')}}" rel="apple-touch-icon">
 
+    <!--    calendly-->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- end calendly -->
+
     <link rel="stylesheet" id="css-main" href="{{asset('lex_admin/assets/css/codebase.min.css')}}">
 </head>
 <body class="body">
@@ -50,7 +54,7 @@
                     <div class="head1">Case Status</div><img src="{{asset('lex_client/images/icon_status.svg')}}" loading="lazy" alt="" class="image-4">
                     <div class="div-block-15">
                         <div class="head-2 center_text">Settlements Demands Completed</div>
-                        <div class="text-block-3">Last Update: 10.06.2021</div>
+                        <div class="text-block-3">Last Update:  {{\Carbon\Carbon::parse($client->updated_at)->isoFormat('MMMM Do YYYY')}}</div>
                     </div>
                 </div>
             </div>
@@ -89,15 +93,28 @@
 </div>
 <footer id="footer" class="footer">
     <div class="container-9 w-container">
-        <a href="{{$lawyer->call_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/phone.svg')}}" loading="lazy" alt="" class="image-12">
+
+        <!-- Calendly link widget begin call -->
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->call_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+            <img src="{{asset('lex_client/images/phone.svg')}}" alt="" class="image-12">
             <div class="text-block-23">Call</div>
         </a>
-        <a href="{{$lawyer->video_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <!-- Calendly link widget end -->
+
+        <!-- Calendly link widget begin video -->
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->video_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+            <img src="{{asset('lex_client/images/Zoom.svg')}}" alt="zoom btn" class="image-13">
             <div class="text-block-23">Video Call</div>
         </a>
-        <a href="{{$lawyer->deposition_url}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <!-- Calendly link widget end -->
+
+        <!-- Calendly link widget begin deposition -->
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->deposition_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ff0000&text_color=69bf54&primary_color=ffff00'});return false;">
+            <img src="{{asset('lex_client/images/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Deposition</div>
         </a>
+        <!-- Calendly link widget end -->
+
         <a href="{{route('client-profile.show', $client->id)}}" class="div-block-67 w-inline-block"><img src="{{asset('lex_client/images/Profile.svg')}}" loading="lazy" alt="" class="image-13">
             <div class="text-block-23">Profile</div>
         </a>
@@ -113,5 +130,10 @@
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60c3a5d304798b7da774cbd0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="{{asset('lex_client/js/webflow.js')}}" type="text/javascript"></script>
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+<!-- Calendly -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- End calendly -->
+
 </body>
 </html>

@@ -19,16 +19,6 @@ class HomeController extends Controller
             'users.email',
             'users.role_id',
             'clients.client_id',
-            'clients.case_nr',
-            'clients.case_type',
-            'clients.co_counsel_client_id_nr',
-
-            'clients.diagnosis',
-            'clients.case_status',
-            'clients.docusign_url',
-            'clients.docusign_btn_pressed',
-            'clients.injured_party_f_name',
-            'clients.injured_party_l_name',
             'clients.client_f_name',
             'clients.client_l_name',
             'clients.address',
@@ -36,11 +26,23 @@ class HomeController extends Controller
             'clients.zip_code',
             'clients.home_phone',
             'clients.cell_phone',
-            'clients.lawyer_id'
+            'clients.lawyer_id',
+
+            'histories.case_nr',
+            'histories.case_type',
+            'histories.co_counsel_client_id_nr',
+            'histories.diagnosis',
+            'histories.case_status',
+            'histories.docusign_url',
+            'histories.docusign_btn_pressed',
+            'histories.injured_party_f_name',
+            'histories.injured_party_l_name',
+            'histories.updated_at'
         )
             ->leftJoin('clients', 'clients.client_id', 'users.id')
             ->where('users.role_id', 3)
             ->where('users.id', Auth::user()->id)
+            ->leftJoin('histories', 'histories.client_id', 'clients.client_id')
             ->first();
 
         $client_id = Auth::user()->id;
@@ -59,14 +61,10 @@ class HomeController extends Controller
             'lawyers.video_url',
             'lawyers.deposition_url',
             'lawyers.lawyer_firm_name'
-
         )
             ->where('users.id', $lawyer_id)
             ->leftJoin('lawyers', 'lawyers.lawyer_id', 'users.id')
             ->first();
-
-//        dd($lawyer);
-
 
         return view('lex_client/pages/index', compact('client', 'lawyer'));
     }

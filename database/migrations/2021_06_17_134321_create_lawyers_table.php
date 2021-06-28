@@ -29,7 +29,6 @@ class CreateLawyersTable extends Migration
             $table->text('call_url')->nullable()->default(null);
             $table->text('video_url')->nullable()->default(null);
             $table->text('deposition_url')->nullable()->default(null);
-            $table->text('calendar_url')->nullable()->default(null);
 
             $table->timestamps();
         });
