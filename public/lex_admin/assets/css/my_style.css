@@ -12,3 +12,20 @@
 .text_title{
     margin-bottom: 10px !important;
 }
+
+.lawyer_profile_data_div{
+    margin-left: 25px;
+}
+
+.lawyer_data_title{
+    width: 200px;
+}
+
+.lawyer_data_subtitle{
+    padding-right: 20px;
+    width: 90%
+}
+
+.index_table_column{
+    width: 15px;
+}

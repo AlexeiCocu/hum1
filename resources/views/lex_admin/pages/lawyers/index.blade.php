@@ -22,7 +22,7 @@
                 <tbody>
                 @foreach($lawyers as $lawyer)
                     <tr>
-                        <td class="text-center">{{$loop->index + 1}}</td>
+                        <td class="text-center index_table_column">{{$loop->index + 1}}</td>
                         <td class="font-w600">{{$lawyer->first_name}} {{$lawyer->last_name}}</td>
                         <td class="d-none d-sm-table-cell">{{$lawyer->email}}</td>
                         <td class="d-none d-sm-table-cell text-center">

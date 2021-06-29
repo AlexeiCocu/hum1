@@ -8,7 +8,7 @@
             <div class="content content-full text-center">
                 <!-- Avatar -->
                 <div class="mb-15">
-                    <a class="img-link" href="#.">
+                    <a class="img-link">
                         @if($lawyer->avatar)
                             <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{asset('storage/avatar/'.$lawyer->avatar)}}" alt="user avatar">
                         @else
@@ -24,29 +24,58 @@
                 </h1>
 
                 <div style="display: flex; justify-content: center; margin-bottom: 50px">
+                    <div class="text-left lawyer_profile_data_div">
 
-                    <div class="text-left">
-                        <h2 class="h5 text-dark-op">
-                            Title:  <a class="text-primary-light">{{$lawyer->title}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Company Name:  <a class="text-primary-light">{{$lawyer->lawyer_firm_name}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Phone:  <a class="text-primary-light">{{$lawyer->phone}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Call URl:  <a class="text-primary-light" >{{$lawyer->call_url}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Video URl:  <a class="text-primary-light" >{{$lawyer->video_url}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Deposition URl:  <a class="text-primary-light">{{$lawyer->deposition_url}}</a>
-                        </h2>
-                        <h2 class="h5 text-dark-op">
-                            Description:  <a class="text-primary-light" >{{$lawyer->lawyer_description}}</a>
-                        </h2>
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Title:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->title}}</h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Company Name:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">
+                                {{$lawyer->lawyer_firm_name}}
+                            </h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Phone:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->phone}}</h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Call URl:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->call_url}}</h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Video URl:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->video_url}}</h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Deposition URl:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->deposition_url}}</h5>
+                        </div>
+
+                        <div class="d-flex ">
+                            <h2 class="h5 text-dark-op mr-3 lawyer_data_title">
+                                Description:
+                            </h2>
+                            <h5 class="lawyer_data_subtitle">{{$lawyer->lawyer_description}}</h5>
+                        </div>
                     </div>
                 </div>
 

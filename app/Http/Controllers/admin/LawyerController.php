@@ -95,6 +95,7 @@ class LawyerController extends Controller
             'lawyers.lawyer_firm_name',
             'lawyers.call_url',
             'lawyers.video_url',
+            'lawyers.lawyer_description',
             'lawyers.deposition_url',
             'lawyers.lawyer_id'
         )
@@ -127,6 +128,7 @@ class LawyerController extends Controller
             'lawyers.call_url',
             'lawyers.video_url',
             'lawyers.deposition_url',
+            'lawyers.lawyer_description',
             'lawyers.lawyer_id'
         )
             ->leftJoin('lawyers', 'lawyers.lawyer_id', 'users.id')
@@ -156,6 +158,7 @@ class LawyerController extends Controller
             'call_url' => 'sometimes',
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
+            'lawyer_description' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
             'password' => 'confirmed'
         ]);
@@ -184,8 +187,7 @@ class LawyerController extends Controller
         $lawyer_details = Lawyer::where('lawyer_id', $id)->first();
         $lawyer_details->update($data);
 
-
-        return redirect()->route('admin-lawyers.index');
+        return redirect()->route('admin-lawyers.show', $id);
     }
 
 

@@ -262,7 +262,7 @@
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="exposure_history_notes">Exposure History Notes:</label>
-                                    <input id="exposure_history_notes" type="text" class="form-control form-control-lg" name="exposure_history_notes" value="{{$client->exposure_history_notes}}">
+                                    <textarea id="exposure_history_notes" type="text" class="form-control form-control-lg" name="exposure_history_notes">{{$client->exposure_history_notes}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
