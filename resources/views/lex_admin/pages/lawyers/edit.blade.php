@@ -133,6 +133,12 @@
                                     <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="deposition_url" placeholder="Enter your deposition URL.." value="{{$lawyer->deposition_url}}">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="lawyer_description">Description</label>
+                                    <textarea type="text" class="form-control form-control-lg" id="lawyer_description" name="lawyer_description" placeholder="Description">{{$lawyer->lawyer_description}}</textarea>
+                                </div>
+                            </div>
 
                             <div class="form-group row">
                                 <div class="col-12">

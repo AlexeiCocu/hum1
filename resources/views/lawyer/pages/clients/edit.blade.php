@@ -64,6 +64,7 @@
                                         <option value="Colorado">Colorado</option>
                                         <option value="Connecticut">Connecticut</option>
                                         <option value="Delaware">Delaware</option>
+                                        <option value="District of Columbia">District of Columbia</option>
                                         <option value="Florida">Florida</option>
                                         <option value="Georgia">Georgia</option>
                                         <option value="Hawaii">Hawaii</option>
@@ -106,13 +107,16 @@
                                         <option value="West Virginia">West Virginia</option>
                                         <option value="Wisconsin">Wisconsin</option>
                                         <option value="Wyoming">Wyoming</option>
+                                        <option value="Armed Forces Americas">Armed Forces Americas</option>
+                                        <option value="Armed Forces Europe">Armed Forces Europe</option>
+                                        <option value="Armed Forces Pacific">Armed Forces Pacific</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="zip_code">Zip Code:</label>
-                                    <input id="zip_code" type="number" class="form-control form-control-lg" name="zip_code" value="{{$client->zip_code}}">
+                                    <input id="zip_code" type="text" pattern="[0-9]*" class="form-control form-control-lg" name="zip_code" value="{{$client->zip_code}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -182,7 +186,29 @@
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="case_status">Case Status:</label>
-                                    <input id="case_status" type="text" class="form-control form-control-lg" name="case_status" value="{{$client->case_status}}">
+                                    <select class="form-control" name="case_status" id="case_status">
+                                        <option value="{{$client->case_status}}">{{$client->case_status}}</option>
+                                        <option value="Pending Medical view">Pending Medical Review</option>
+                                        <option value="Medical Records Ordered">Medical Records Ordered</option>
+                                        <option value="Records Received">Records Received</option>
+                                        <option value="Records Reviewed by expert">Records Reviewed by expert</option>
+                                        <option value="Case Filed (date)">Case Filed (date)</option>
+                                        <option value="Defendants Served">Defendants Served</option>
+                                        <option value="Discovery Completed by Client">Discovery Completed by Client</option>
+                                        <option value="Deposition Scheduled">Deposition Scheduled</option>
+                                        <option value="Deposition Completed">Deposition Completed</option>
+                                        <option value="Affidavits Completed">Affidavits Completed</option>
+                                        <option value="Co-worker Interviewed">Co-worker Interviewed</option>
+                                        <option value="Case set for trial">Case set for trial</option>
+                                        <option value="Trial Date">Trial Date</option>
+                                        <option value="Settlement Demands Completed">Settlement Demands Completed</option>
+                                        <option value="Pending Settlement">Pending Settlement</option>
+                                        <option value="Medical Lien Review">Medical Lien Review</option>
+                                        <option value="Settlement Issued">Settlement Issued</option>
+                                        <option value="Case Closed">Case Closed</option>
+                                        <option value="Case Dismissed">Case Dismissed</option>
+                                        <option value="DECLINED">DECLINED</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -250,7 +276,23 @@
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="client_rel_to_injured">Relation of the Client to the Deceased:</label>
-                                    <input id="client_rel_to_injured" type="text" class="form-control form-control-lg" name="rel_of_the_client_to_the_deceased" value="{{$client->rel_of_the_client_to_the_deceased}}">
+                                    <select class="form-control" name="client_rel_to_injured" id="client_rel_to_injured">
+                                        <option value="{{$client->rel_of_the_client_to_the_deceased}}">{{$client->rel_of_the_client_to_the_deceased}}</option>
+                                        <option value="Wife">Wife</option>
+                                        <option value="Husband">Husband</option>
+                                        <option value="Son">Son</option>
+                                        <option value="Daughter">Daughter</option>
+                                        <option value="Mother">Mother</option>
+                                        <option value="Father">Father</option>
+                                        <option value="Sister">Sister</option>
+                                        <option value="Brother">Brother</option>
+                                        <option value="Aunt">Aunt</option>
+                                        <option value="Uncle">Uncle</option>
+                                        <option value="Adopted Child">Adopted Child</option>
+                                        <option value="Stepchild">Stepchild</option>
+                                        <option value="Guardian Ad Litem">Guardian Ad Litem</option>
+                                        <option value="Executor/Executrix">Executor/Executrix</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -292,26 +334,27 @@
                             </div>
                         </div>
                     </div>
+                    @if($errors->any())
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="aler alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>
         <!-- END Lawyer Profile -->
 
-        @if($errors->any())
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="aler alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
+
 
         <!-- Delete Docusign URl -->
         <div class="block">
@@ -402,6 +445,21 @@
                             </div>
                         </div>
                     </div>
+                    @if($errors->any())
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="aler alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>

@@ -93,6 +93,7 @@ class LawyerController extends Controller
             'lawyers.phone',
             'lawyers.avatar',
             'lawyers.lawyer_firm_name',
+            'lawyers.lawyer_description',
             'lawyers.call_url',
             'lawyers.video_url',
             'lawyers.lawyer_description',
@@ -155,10 +156,10 @@ class LawyerController extends Controller
             'title' => 'sometimes',
             'phone' => 'sometimes',
             'lawyer_firm_name' => 'sometimes',
+            'lawyer_description' => 'sometimes',
             'call_url' => 'sometimes',
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
-            'lawyer_description' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
             'password' => 'confirmed'
         ]);

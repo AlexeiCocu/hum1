@@ -117,7 +117,7 @@
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <label for="call_url">Call URl</label>
+                                    <label for="call_url">Call URL</label>
                                     <input type="text" class="form-control form-control-lg" id="call_url" name="call_url" placeholder="Enter call URL.." value="{{$lawyer->call_url}}">
                                 </div>
                             </div>
