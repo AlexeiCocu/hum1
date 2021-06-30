@@ -43,19 +43,20 @@ Route::group(['prefix' => '/', 'middleware' => ['auth', 'checkActive']], functio
     Route::group(['prefix' => 'admin', 'middleware' => 'can:access_role,"admin"'], function () {
         Route::get('/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin-index');
         Route::resource('/lawyers', LawyerController::class)->names('admin-lawyers');
+        Route::put('/admin-lawyer-password/{id}', [\App\Http\Controllers\admin\LawyerPasswordController::class, 'index'])->name('admin.lawyer-password');
     });
 
     Route::group(['prefix' => 'lawyer', 'middleware' => 'can:access_role,"lawyer"'], function () {
         Route::get('/', [\App\Http\Controllers\lawyer\HomeController::class, 'index'])->name('lawyer-index');
         Route::resource('/clients', ClientController::class)->names('lawyer-clients');
         Route::resource('/profiles', ProfileController::class)->names('lawyer-profile');
+        Route::put('/lawyer-password/{id}', [\App\Http\Controllers\lawyer\LawyerPasswordController::class, 'index'])->name('lawyer.lawyer-password');
+        Route::put('/lawyer-client-password/{id}', [\App\Http\Controllers\lawyer\LawyerClientPasswordController::class, 'index'])->name('lawyer.client-password');
     });
 
     Route::group(['prefix' => 'client', 'middleware' => 'can:access_role,"client"'], function () {
         Route::get('/', [\App\Http\Controllers\user\HomeController::class, 'index'])->name('user-index');
         Route::resource('/profiles', \App\Http\Controllers\user\ProfileController::class)->names('client-profile');
-
     });
-
 
 });

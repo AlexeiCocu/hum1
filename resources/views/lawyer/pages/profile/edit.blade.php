@@ -188,7 +188,7 @@
                 </h3>
             </div>
             <div class="block-content">
-                <form action="{{route('lawyer-profile.update', $lawyer->id)}}" method="post">
+                <form action="{{route('lawyer.lawyer-password', $lawyer->id)}}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="row items-push">
@@ -200,29 +200,28 @@
                                 <div class="col-12">
                                     <label for="current_password">Current Password</label>
                                     <input type="password" class="form-control form-control-lg" id="current_password" name="current_password" value="{{$lawyer->password}}">
-                                    @error('current_password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+{{--                                    @error('current_password')--}}
+{{--                                    <div class="alert alert-danger">{{ $message }}</div>--}}
+{{--                                    @enderror--}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="new_password">New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="new_password" name="new_password">
-                                    @error('new_password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="password_confirmation">Confirm New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="password_confirmation" name="password_confirmation">
-                                    @error('password_confirmation')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+
                                 </div>
                             </div>
+                            @if($errors->any())
+                                <div class="alert alert-danger">{{$errors->first()}}</div>
+                            @endif
                             <div class="form-group row">
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-alt-primary">Update</button>

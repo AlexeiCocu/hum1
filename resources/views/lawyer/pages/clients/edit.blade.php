@@ -382,7 +382,7 @@
                 </h3>
             </div>
             <div class="block-content">
-                <form action="{{route('lawyer-clients.update', $client->id)}}" method="post">
+                <form action="{{route('lawyer.client-password', $client->id)}}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="row items-push">
@@ -394,18 +394,18 @@
                                 <div class="col-12">
                                     <label for="profile-settings-password">Current Password</label>
                                     <input type="password" class="form-control form-control-lg" id="profile-settings-password" name="current_password">
-                                    @error('current_password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+{{--                                    @error('current_password')--}}
+{{--                                    <div class="alert alert-danger">{{ $message }}</div>--}}
+{{--                                    @enderror--}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-password-new">New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="profile-settings-password-new" name="new_password">
-                                    @error('new_password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+{{--                                    @error('new_password')--}}
+{{--                                    <div class="alert alert-danger">{{ $message }}</div>--}}
+{{--                                    @enderror--}}
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -417,6 +417,9 @@
                                     @enderror
                                 </div>
                             </div>
+                            @if($errors->any())
+                                <div class="alert alert-danger">{{$errors->first()}}</div>
+                            @endif
                             <div class="form-group row">
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-alt-primary">Update</button>

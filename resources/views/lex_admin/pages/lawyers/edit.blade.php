@@ -151,21 +151,6 @@
             </div>
         </div>
         <!-- END Lawyer Profile -->
-        @if($errors->any())
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="aler alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
 
         <!-- Change Password -->
@@ -178,7 +163,7 @@
                 </h3>
             </div>
             <div class="block-content">
-                <form action="{{route('admin-lawyers.update', $lawyer->id)}}" method="post">
+                <form action="{{route('admin.lawyer-password', $lawyer->id)}}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="row items-push">
@@ -189,21 +174,27 @@
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-password">Current Password</label>
-                                    <input type="password" class="form-control form-control-lg" id="profile-settings-password" name="current_password">
+                                    <input type="password" class="form-control form-control-lg" id="profile-settings-password" name="current_password" >
+
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-password-new">New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="profile-settings-password-new" name="new_password">
+
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-password-new-confirm">Confirm New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="profile-settings-password-new-confirm" name="password_confirmation">
+
                                 </div>
                             </div>
+                            @if($errors->any())
+                                <div class="alert alert-danger">{{$errors->first()}}</div>
+                            @endif
                             <div class="form-group row">
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-alt-primary">Update</button>
