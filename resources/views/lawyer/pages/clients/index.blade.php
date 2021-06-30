@@ -60,15 +60,21 @@
                                             </div>
                                         </div>
                                         <div class="block-content">
-                                            <div class="form-group row">
+
                                                 <div class="col-md-12">
-                                                    <div class="form-material floating">
-                                                        <input type="text" class="form-control" id="docusign_url" name="docusign_url">
-                                                        <label for="docusign_url">Link URL</label>
+                                                    <div class="form-group row">
+                                                        <label class="col-12" for="docusign_url">Link URL</label>
+                                                        <div class="col-12">
+                                                            <input type="text" class="form-control" id="docusign_url" name="docusign_url" placeholder="Link URL..">
+                                                        </div>
                                                     </div>
+{{--                                                    <div class="form-material floating">--}}
+{{--                                                        <input type="text" class="form-control" id="docusign_url" name="docusign_url">--}}
+{{--                                                        <label for="docusign_url">Link URL</label>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             </div>
-                                        </div>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Close</button>
