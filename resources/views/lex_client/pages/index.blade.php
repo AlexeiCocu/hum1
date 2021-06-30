@@ -74,7 +74,7 @@
             </div>
             @endisset
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93ce-f774cbd1" class="grid_div-2">
-                <div class="div-block-16" style="border-radius: 50%"><img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" loading="lazy" alt="lawyer picture" class="image-3">
+                <div class="div-block-16"><img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" style="border-radius: 50%" loading="lazy" alt="lawyer picture" class="image-3">
                     <div class="head-2 lawyer_name">{{$lawyer->first_name}} {{$lawyer->last_name}}</div>
                     <div class="text-block-8">{{$lawyer->title}}</div>
                 </div>
