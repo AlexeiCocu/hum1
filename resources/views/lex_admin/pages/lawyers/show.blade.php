@@ -19,11 +19,11 @@
                 <!-- END Avatar -->
 
                 <!-- Personal -->
-                <h1 class="h3 text-dark font-w700 mb-1">
+                <h1 class="h3 text-dark font-w700">
                     {{$lawyer->first_name}} {{$lawyer->last_name}}
                 </h1>
 
-                <div style="display: flex; justify-content: center; margin-bottom: 50px">
+                <div style="display: flex; justify-content: center; margin-bottom: 50px; margin-top: 30px">
                     <div class="text-left lawyer_profile_data_div">
 
                         <div class="d-flex">
