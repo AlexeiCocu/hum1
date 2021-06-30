@@ -23,7 +23,7 @@
     <!-- end calendly -->
 </head>
 <body class="body">
-<a class="skip-link" href="#maincontent">Skip to main</a>
+<a class="skip-link" href="#maincontent" style="display: none">Skip to main</a>
 <header class="section-7"><img src="{{asset('lex_client/images/logo.svg')}}" loading="lazy" alt="logo" class="image-14"></header>
 <div id="maincontent" class="section">
     <div class="main_container w-container">
@@ -74,7 +74,7 @@
             </div>
             @endisset
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93ce-f774cbd1" class="grid_div-2">
-                <div class="div-block-16"><img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" loading="lazy" alt="lawyer picture" class="image-3">
+                <div class="div-block-16" style="border-radius: 50%"><img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" loading="lazy" alt="lawyer picture" class="image-3">
                     <div class="head-2 lawyer_name">{{$lawyer->first_name}} {{$lawyer->last_name}}</div>
                     <div class="text-block-8">{{$lawyer->title}}</div>
                 </div>
