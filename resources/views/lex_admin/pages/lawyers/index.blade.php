@@ -27,9 +27,9 @@
                         <td class="d-none d-sm-table-cell">{{$lawyer->email}}</td>
                         <td class="d-none d-sm-table-cell text-center">
                             @if($lawyer->avatar)
-                            <img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" alt="user avatar" style="width: 50px; height: 50px; object-fit: contain">
+                            <img src="{{asset('storage/avatar/'.$lawyer->avatar)}}" alt="user avatar" style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;">
                             @else
-                                <img src="{{asset('lex_admin/assets/img/user_avatar.svg')}}" alt="user placeholder" style="width: 80px; height: 80px; border-radius: 50%; object-fit: contain">
+                                <img src="{{asset('lex_admin/assets/img/user_avatar.svg')}}" alt="user placeholder" style="width: 60px; height: 60px; object-fit: contain">
                             @endif
                         </td>
                         <td class="text-center">
