@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 
 class LawyerController extends Controller
 {
@@ -161,20 +162,28 @@ class LawyerController extends Controller
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
-            'password' => 'confirmed'
+            'current_password' => 'required|password|confirmed',
         ]);
 
-        if (Hash::check($request->current_password, Auth::user()->password) ) {
-            if($request->new_password == $request->password_confirmation){
-                $data['password'] = Hash::make($request->password_confirmation);
-            }
-        }
+//        if (Hash::check($request->current_password, Auth::user()->password) ) {
+//            if($request->new_password == $request->password_confirmation){
+//                $data['password'] = Hash::make($request->password_confirmation);
+//            }
+//        }
 
 //        if (!Hash::check($request->current_password, Auth::user()->password)) {
 //            throw ValidationException::withMessages([
 //                'current_password' => ['Current provided password dont match with our records'],
 //            ]);
 //        }
+
+        if (!Hash::check($request->current_password, Auth::user()->password)) {
+            throw ValidationException::withMessages([
+                'current_password' => ['Current provided password dont match with our records'],
+            ]);
+        }else{
+            $data['password'] = Hash::make($request->password_confirmation);
+        }
 
         $lawyer = User::where('id', $id)->first();
 

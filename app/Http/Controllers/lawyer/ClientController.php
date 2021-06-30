@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 
 class ClientController extends Controller
 {
@@ -230,7 +231,10 @@ class ClientController extends Controller
             'first_name' => 'sometimes|string',
             'last_name' => 'sometimes|string',
             'email' => 'sometimes|string',
+            'current_password' => 'required',
         ]);
+
+//        dd($data);
 
         $userClient = $request->validate([
             'address' => 'sometimes',
@@ -267,10 +271,18 @@ class ClientController extends Controller
             'referred_to' => 'sometimes'
         ]);
 
-        if(Hash::check($request->current_password, Auth::user()->password) ) {
-            if($request->new_password == $request->password_confirmation){
-                $data['password'] = Hash::make($request->password_confirmation);
-            }
+//        if(Hash::check($request->current_password, Auth::user()->password) ) {
+//            if($request->new_password == $request->password_confirmation){
+//                $data['password'] = Hash::make($request->password_confirmation);
+//            }
+//        }
+
+        if (!Hash::check($request->current_password, Auth::user()->password)) {
+            throw ValidationException::withMessages([
+                'current_password' => ['Current provided password dont match with our records'],
+            ]);
+        }else{
+            $data['password'] = Hash::make($request->password_confirmation);
         }
 
         $client = User::where('id', $id)->first();

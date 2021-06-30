@@ -91,6 +91,9 @@
                                         <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
                                         <input type="file" class="custom-file-input" id="avatar" name="avatar" data-toggle="custom-file-input">
                                         <label class="custom-file-label" for="avatar">Choose new profile picture</label>
+                                        @error('avatar')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -99,18 +102,27 @@
                                 <div class="col-12">
                                     <label for="title">Title</label>
                                     <input type="text" class="form-control form-control-lg" id="title" name="title" placeholder="Enter your Title" value="{{$lawyer->title}}">
+                                    @error('title')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="phone">Phone</label>
                                     <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Enter your phone.." value="{{$lawyer->phone}}" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);">
+                                    @error('phone')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="profile-settings-email">Law Firm Name</label>
                                     <input type="text" class="form-control form-control-lg" id="profile-settings-email" name="lawyer_firm_name" placeholder="Enter company name.." value="{{$lawyer->lawyer_firm_name}}">
+                                    @error('lawyer_firm_name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -119,24 +131,36 @@
                                 <div class="col-12">
                                     <label for="call_url">Call URL</label>
                                     <input type="text" class="form-control form-control-lg" id="call_url" name="call_url" placeholder="Enter call URL.." value="{{$lawyer->call_url}}">
+                                    @error('call_url')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="video_url">Video URL</label>
                                     <input type="text" class="form-control form-control-lg" id="video_url" name="video_url" placeholder="Enter video URL.." value="{{$lawyer->video_url}}">
+                                    @error('video_url')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="deposition_url">Deposition URL</label>
                                     <input type="text" class="form-control form-control-lg" id="deposition_url" name="deposition_url" placeholder="Enter your deposition URL.." value="{{$lawyer->deposition_url}}">
+                                    @error('deposition_url')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="lawyer_description">Description</label>
                                     <textarea type="text" class="form-control form-control-lg" id="lawyer_description" name="lawyer_description" placeholder="Description">{{$lawyer->lawyer_description}}</textarea>
+                                    @error('lawyer_description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -152,21 +176,6 @@
             </div>
         </div>
         <!-- END Lawyer Profile -->
-        @if($errors->any())
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="aler alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
 
         <!-- Change Password -->
@@ -191,18 +200,27 @@
                                 <div class="col-12">
                                     <label for="current_password">Current Password</label>
                                     <input type="password" class="form-control form-control-lg" id="current_password" name="current_password" value="{{$lawyer->password}}">
+                                    @error('current_password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="new_password">New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="new_password" name="new_password">
+                                    @error('new_password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="password_confirmation">Confirm New Password</label>
                                     <input type="password" class="form-control form-control-lg" id="password_confirmation" name="password_confirmation">
+                                    @error('password_confirmation')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
