@@ -28,11 +28,6 @@ class LawyerClientPasswordController extends Controller
             ->where('users.id', $id)
             ->first();
 
-//        dd($id);
-
-//        dd(Hash::check($request->current_password, $clientPassword->password));
-
-
         if(!Hash::check($request->current_password, $clientPassword->password)){
             return back()->withErrors(['Current password does not match our records']);
         }

@@ -277,13 +277,13 @@ class ClientController extends Controller
 //            }
 //        }
 
-        if (!Hash::check($request->current_password, Auth::user()->password)) {
-            throw ValidationException::withMessages([
-                'current_password' => ['Current provided password dont match with our records'],
-            ]);
-        }else{
-            $data['password'] = Hash::make($request->password_confirmation);
-        }
+//        if (!Hash::check($request->current_password, Auth::user()->password)) {
+//            throw ValidationException::withMessages([
+//                'current_password' => ['Current provided password dont match with our records'],
+//            ]);
+//        }else{
+//            $data['password'] = Hash::make($request->password_confirmation);
+//        }
 
         $client = User::where('id', $id)->first();
         $client->update($data);
