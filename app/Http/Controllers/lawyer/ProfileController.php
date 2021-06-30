@@ -130,7 +130,6 @@ class ProfileController extends Controller
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
-            'current_password' => 'sometimes|password|confirmed',
         ]);
 
 
@@ -140,13 +139,13 @@ class ProfileController extends Controller
 //            }
 //        }
 
-        if (!Hash::check($request->current_password, Auth::user()->password)) {
-            throw ValidationException::withMessages([
-                'current_password' => ['Current provided password dont match with our records'],
-            ]);
-        }else{
-            $data['password'] = Hash::make($request->password_confirmation);
-        }
+//        if (!Hash::check($request->current_password, Auth::user()->password)) {
+//            throw ValidationException::withMessages([
+//                'current_password' => ['Current provided password dont match with our records'],
+//            ]);
+//        }else{
+//            $data['password'] = Hash::make($request->password_confirmation);
+//        }
 
         $lawyer = User::where('id', $id)->first();
 

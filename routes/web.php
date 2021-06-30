@@ -52,6 +52,7 @@ Route::group(['prefix' => '/', 'middleware' => ['auth', 'checkActive']], functio
         Route::resource('/profiles', ProfileController::class)->names('lawyer-profile');
         Route::put('/lawyer-password/{id}', [\App\Http\Controllers\lawyer\LawyerPasswordController::class, 'index'])->name('lawyer.lawyer-password');
         Route::put('/lawyer-client-password/{id}', [\App\Http\Controllers\lawyer\LawyerClientPasswordController::class, 'index'])->name('lawyer.client-password');
+        Route::put('/docusign/{id}', [\App\Http\Controllers\lawyer\DocusignController::class, 'index'])->name('lawyer.docusign');
     });
 
     Route::group(['prefix' => 'client', 'middleware' => 'can:access_role,"client"'], function () {

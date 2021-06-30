@@ -30,7 +30,7 @@
                             @if(!isset($client->docusign_url))
                                 <a href="#." class="btn btn-rounded btn-alt-danger min-width-125" data-toggle="modal" data-target="#modal-fadein_{{$client->id}}">Sign</a>
                             @else
-                                <a href="#." class="btn btn-rounded btn-alt-success min-width-125" data-toggle="modal" data-target="#modal2-fadein_{{$client->id}}">
+                                <a href="#." class="min-width-125" data-toggle="modal" data-target="#modal2-fadein_{{$client->id}}">
                                     <img src="{{asset('lex_client/images/docsign.svg')}}" alt="doc sign img">
                                 </a>
                             @endif
@@ -47,7 +47,7 @@
                     <div class="modal fade" id="modal-fadein_{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-fadein" aria-hidden="true">
                         <div class="modal-dialog mt-100" role="document">
                             <div class="modal-content">
-                                <form action="{{route('lawyer-clients.update', $client->id)}}" method="POST">
+                                <form action="{{route('lawyer.docusign', $client->id)}}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="block block-themed block-transparent mb-0">
@@ -86,7 +86,7 @@
                     <div class="modal fade" id="modal2-fadein_{{$client->id}}" tabindex="-1" role="dialog" aria-labelledby="modal2-fadein" aria-hidden="true">
                         <div class="modal-dialog mt-100" role="document">
                             <div class="modal-content">
-                                <form action="{{route('lawyer-clients.update', $client->id)}}" method="POST">
+                                <form action="{{route('lawyer.docusign', $client->id)}}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="block block-themed block-transparent mb-0">
