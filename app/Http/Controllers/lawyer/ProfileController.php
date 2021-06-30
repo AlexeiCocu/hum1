@@ -130,7 +130,7 @@ class ProfileController extends Controller
             'video_url' => 'sometimes',
             'deposition_url' => 'sometimes',
             'avatar' => 'sometimes|image|max:1000',
-            'current_password' => 'required|password|confirmed',
+            'current_password' => 'sometimes|password|confirmed',
         ]);
 
 

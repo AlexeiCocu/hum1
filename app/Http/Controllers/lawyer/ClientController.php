@@ -231,7 +231,7 @@ class ClientController extends Controller
             'first_name' => 'sometimes|string',
             'last_name' => 'sometimes|string',
             'email' => 'sometimes|string',
-            'current_password' => 'required',
+            'current_password' => 'sometimes',
         ]);
 
 //        dd($data);
