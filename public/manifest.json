@@ -84,8 +84,8 @@
   }
 
   ],
-  "lang": "en-US",
-  "start_url": ".",
+  "lang": "en",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "red",
