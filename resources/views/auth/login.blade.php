@@ -18,11 +18,15 @@
     <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:300,regular,500,600,700"]  }});</script>
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-    <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
-    <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
+    <link href="{{asset('images/icons/logo.png')}}" rel="shortcut icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{asset('images/icons/icon-192x192.png')}}">
+    <meta name="apple-mobile-web-app-status-bar" content="red">
 
 {{--    @laravelPWA--}}
+    {{--END PWA--}}
+    <meta name="theme-color" content="red">
     <link rel="manifest" href="{{asset('manifest.json')}}">
+    {{--    @laravelPWA--}}
 
 </head>
 <body class="body">

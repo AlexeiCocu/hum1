@@ -21,7 +21,10 @@
 
 {{--    @laravelPWA--}}
 
+    {{--END PWA--}}
+    <meta name="theme-color" content="red">
     <link rel="manifest" href="{{asset('manifest.json')}}">
+    {{--    @laravelPWA--}}
 
 </head>
 <body class="body">
