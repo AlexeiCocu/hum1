@@ -75,7 +75,7 @@ self.addEventListener('fetch', evt => {
                 })
             });
         }).catch(() => {
-            if(evt.request.url.indexOf('.html') > -1){
+            if(evt.request.url.indexOf('.php') > -1){
 
                 alert('You a currently offline');
 
