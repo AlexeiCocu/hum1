@@ -4,70 +4,70 @@ return [
     'name' => 'LaravelPWA Humm',
     'manifest' => [
         'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
+        'short_name' => 'PWA2',
         'start_url' => '/',
         'background_color' => 'red',
         'theme_color' => '#000000',
         'display' => 'standalone',
-        'orientation'=> 'any',
+        'orientation'=> 'portrait',
         'status_bar'=> 'black',
         'icons' => [
             'admin_user_icon' => [
-                'path' => '/images/icons/admin_user_icon.svg',
+                'path' => './images/icons/admin_user_icon.svg',
                 'sizes' => '22x24',
                 'purpose' => 'any'
             ],
             'arrow_left' => [
-                'path' => '/images/icons/arrow_left.svg',
+                'path' => './images/icons/arrow_left.svg',
                 'sizes' => '13x21',
                 'purpose' => 'any'
             ],
             'calendar' => [
-                'path' => '/images/icons/calendar.svg',
+                'path' => './images/icons/calendar.svg',
                 'sizes' => '24x25',
                 'purpose' => 'any'
             ],
             'docsign' => [
-                'path' => '/images/icons/docsign.svg',
+                'path' => './images/icons/docsign.svg',
                 'sizes' => '112x53',
                 'purpose' => 'any'
             ],
             'envelope' => [
-                'path' => '/images/icons/envelope.svg',
+                'path' => './images/icons/envelope.svg',
                 'sizes' => '24x20',
                 'purpose' => 'any'
             ],
             'export' => [
-                'path' => '/images/icons/export.svg',
+                'path' => './images/icons/export.svg',
                 'sizes' => '13x13',
                 'purpose' => 'any'
             ],
             'i_icon' => [
-                'path' => '/images/icons/i_icon.svg',
+                'path' => './images/icons/i_icon.svg',
                 'sizes' => '20x20',
                 'purpose' => 'any'
             ],
 
             'icon_status' => [
-                'path' => '/images/icons/icon_status.svg',
+                'path' => './images/icons/icon_status.svg',
                 'sizes' => '40x46',
                 'purpose' => 'any'
             ],
 
             'log-out' => [
-                'path' => '/images/icons/log-out.png',
+                'path' => './images/icons/log-out.png',
                 'sizes' => '64x64',
                 'purpose' => 'any'
             ],
 
             'logo' => [
-                'path' => '/images/icons/logo.png',
+                'path' => './images/icons/logo.png',
                 'sizes' => '50x45',
                 'purpose' => 'any'
             ],
 
             'logo_svg' => [
-                'path' => '/images/icons/logo.svg',
+                'path' => './images/icons/logo.svg',
                 'sizes' => '238x201',
                 'purpose' => 'any'
             ],
@@ -78,7 +78,7 @@ return [
                 'purpose' => 'any'
             ],
             'phone' => [
-                'path' => '/images/icons/phone.svg',
+                'path' => './images/icons/phone.svg',
                 'sizes' => '27x28',
                 'purpose' => 'any'
             ],
@@ -90,7 +90,7 @@ return [
             ],
 
             'zoom' => [
-                'path' => '/images/icons/zoom.svg',
+                'path' => './images/icons/zoom.svg',
                 'sizes' => '30x19',
                 'purpose' => 'any'
             ],

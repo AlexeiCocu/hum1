@@ -1,20 +1,16 @@
-var staticCacheName = "pwa-v" + new Date().getTime();
-var filesToCache = [
+const staticCacheName = "pwa-v" + new Date().getTime();
+const filesToCache = [
     '/offline',
-    '/css/app.css',
-    '/js/app.js',
-    '/images/icons/icon-72x72.png',
-    '/images/icons/icon-96x96.png',
-    '/images/icons/icon-128x128.png',
-    '/images/icons/icon-144x144.png',
-    '/images/icons/icon-152x152.png',
     '/images/icons/icon-192x192.png',
-    '/images/icons/icon-384x384.png',
-    '/images/icons/icon-512x512.png',
+    '/images/icons/logo.png',
+    '/images/icons/logo.svg',
+    '/images/no-image.jpg',
+    '/lex_client/css/ac-project-f6426e.webflow.css',
+    '/lex_client/css/normalize.css',
+    '/lex_client/css/webflow.css',
 ];
 
-// Cache on install
-self.addEventListener("install", event => {
+self.addEventListener('install', event => {
     this.skipWaiting();
     event.waitUntil(
         caches.open(staticCacheName)
@@ -22,9 +18,9 @@ self.addEventListener("install", event => {
                 return cache.addAll(filesToCache);
             })
     )
-});
+})
 
-// Clear cache on activate
+// clear cache on activate
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -33,20 +29,20 @@ self.addEventListener('activate', event => {
                     .filter(cacheName => (cacheName.startsWith("pwa-")))
                     .filter(cacheName => (cacheName !== staticCacheName))
                     .map(cacheName => caches.delete(cacheName))
-            );
+            )
         })
-    );
-});
+    )
+})
 
-// Serve from Cache
+// serve from cache
 self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
                 return response || fetch(event.request);
             })
-            .catch(() => {
-                return caches.match('offline');
+            .catch(()=>{
+                return caches.match('offline')
             })
     )
-});
+})
