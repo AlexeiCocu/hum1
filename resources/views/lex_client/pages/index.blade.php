@@ -92,8 +92,8 @@
             </div>
             <div id="w-node-_8060012d-cdcd-8298-5f9d-b277b72e93d5-f774cbd1" class="grid_div-2">
                 <div class="div-block-12">
-                    <div class="text-block-21">{{$lawyer->lawyer_firm_name}}</div>
-                    <div class="text-block-22">{{$lawyer->lawyer_description}}</div>
+                    <div class="text-block-21">{{$lawyer->lawyer_firm_name ?? ' lawyer_firm_name'}}</div>
+                    <div class="text-block-22">{{$lawyer->lawyer_description ?? 'lawyer_description'}}</div>
                 </div>
             </div>
         </div>
