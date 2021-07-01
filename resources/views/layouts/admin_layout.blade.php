@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
+{{--    <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">--}}
 
     <title>7lex Admin</title>
 
@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700&display=swap">
     <link rel="stylesheet" id="css-main" href="{{asset('lex_admin/assets/css/codebase.min.css')}}">
     <link rel="stylesheet" href="{{asset('lex_admin/assets/css/my_style.css')}}">
+
+    {{--END PWA--}}
+    <meta name="theme-color" content="red">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+{{--    @laravelPWA--}}
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
@@ -100,5 +105,6 @@
 <script src="{{asset('lex_admin/assets/js/codebase.app.min.js')}}"></script>
 
 @stack('script')
+<script src="{{asset('js/serviceWorker.js')}}"></script>
 </body>
 </html>

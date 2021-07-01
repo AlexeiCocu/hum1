@@ -9,8 +9,6 @@
 
     <title>7lex Admin</title>
 
-
-
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
     <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}">
@@ -24,6 +22,11 @@
     <link rel="stylesheet" id="css-main" href="{{asset('lex_admin/assets/css/codebase.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('lex_admin/assets/css/my_style.css')}}">
+
+    {{--END PWA--}}
+    <meta name="theme-color" content="red">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+{{--    @laravelPWA--}}
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
@@ -100,5 +103,7 @@
 -->
 <script src="{{asset('lex_admin/assets/js/codebase.app.min.js')}}"></script>
 @stack('script')
+
+<script src="{{asset('js/serviceWorker.js')}}"></script>
 </body>
 </html>
