@@ -59,8 +59,9 @@
 
 <!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
 <!--  Last Published: Thu Jun 17 2021 09:47:31 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="60c3bda4bac0d1845e18908a" data-wf-site="60c3a5d304798b7da774cbd0">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-wf-page="60c3bda4bac0d1845e18908a" data-wf-site="60c3a5d304798b7da774cbd0">
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <title>Hummingbirdtrail | Log in</title>
     <meta content="Log in" property="og:title">
