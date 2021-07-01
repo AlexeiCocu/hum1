@@ -2,31 +2,31 @@
   "name": "Hummingbirdtrail2",
   "short_name": "Hummingbirdtrail2",
   "icons": [{
-    "src": "./images/icons/admin_user_icon.svg",
+    "src": "/images/icons/admin_user_icon.svg",
       "sizes": "22x24",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/arrow_left.svg",
+      "src": "/images/icons/arrow_left.svg",
       "sizes": "13x21",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/calendar.svg",
+      "src": "/images/icons/calendar.svg",
       "sizes": "24x25",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/docsign.svg",
+      "src": "/images/icons/docsign.svg",
       "sizes": "112x53",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/envelope.svg",
+      "src": "/images/icons/envelope.svg",
       "sizes": "24x20",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/export.svg",
+      "src": "/images/icons/export.svg",
       "sizes": "13x13",
       "type": "image/svg"
     }, {
-      "src": "./images/icons/i_icon.svg",
+      "src": "/images/icons/i_icon.svg",
       "sizes": "20x20",
       "type": "image/svg"
   }, {
@@ -34,60 +34,62 @@
       "sizes": "40x46",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/log-out.png",
+      "src": "/images/icons/log-out.png",
       "sizes": "64x64",
       "type": "image/png"
   }, {
-      "src": "./images/icons/logo.png",
+      "src": "/images/icons/logo.png",
       "sizes": "50x45",
       "type": "image/png"
   }, {
-      "src": "./images/icons/logo.svg",
+      "src": "/images/icons/logo.svg",
       "sizes": "238x201",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/phone.svg",
+      "src": "/images/icons/phone.svg",
       "sizes": "27x28",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/print.svg",
+      "src": "/images/icons/print.svg",
       "sizes": "15x15",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/Profile.svg",
+      "src": "/images/icons/Profile.svg",
       "sizes": "23x25",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/zoom.svg",
+      "src": "/images/icons/zoom.svg",
       "sizes": "30x19",
       "type": "image/svg"
   }, {
-      "src": "./images/icons/law_icon.jpg",
+      "src": "/images/icons/law_icon.jpg",
       "sizes": "604x604",
       "type": "image/jpg"
   }, {
-      "src": "./images/icons/icon-192x192.png",
+      "src": "/images/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
   }, {
-      "src": "./images/icons/icon-256x256.png",
+      "src": "/images/icons/icon-256x256.png",
       "sizes": "256x256",
       "type": "image/png"
   }, {
-      "src": "./images/icons/icon-384x384.png",
+      "src": "/images/icons/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
   }, {
-      "src": "./images/icons/icon-512x512.png",
+      "src": "/images/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
   }
 
   ],
   "lang": "en",
-  "start_url": "/",
+  "start_url": "/index.php",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "background_color": "red",
   "theme_color": "red"
 }
+
+

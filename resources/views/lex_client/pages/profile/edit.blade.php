@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
     <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
 
-    @laravelPWA
+{{--    @laravelPWA--}}
 
 </head>
 <body class="body">
@@ -29,7 +29,7 @@
             <div class="text-block-11">Back</div>
         </a>
         <div class="div-block-60">
-            <div class="text-block-19">Edit Case Information</div>
+            <div class="text-block-19">Edit Your Data</div>
         </div>
     </nav>
 </header>

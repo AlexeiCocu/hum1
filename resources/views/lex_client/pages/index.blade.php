@@ -6,7 +6,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Hummingbirdtrail</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta name="theme-color" content="red">
     <meta content="Webflow" name="generator">
     <meta content="description" name="description">
 {{--    <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">--}}
@@ -15,15 +14,21 @@
     <link href="{{asset('lex_client/css/ac-project-f6426e.webflow.css')}}" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:300,regular,500,600,700"]  }});</script>
-    <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+{{--    <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->--}}
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
     <link href="{{asset('images/icons/logo.png')}}" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{asset('images/icons/icon-192x192.png')}}">
     <meta name="apple-mobile-web-app-status-bar" content="red">
 
-    @laravelPWA
+{{--    PWA--}}
 
-{{--    <link rel="manifest" href="{{asset('manifest.json')}}">--}}
+
+{{--END PWA--}}
+    <meta name="theme-color" content="red">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+{{--    @laravelPWA--}}
+
+
 
     <!-- Calendly link widget begin -->
     <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -124,9 +129,9 @@
         </form>
     </div>
 </footer>
-<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60c3a5d304798b7da774cbd0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+{{--<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60c3a5d304798b7da774cbd0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>--}}
 {{--<script src="{{asset('lex_client/js/webflow.js')}}" type="text/javascript"></script>--}}
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-{{--<script src="{{asset('js/serviceWorker.js')}}"></script>--}}
+<script src="{{asset('js/serviceWorker.js')}}"></script>
 </body>
 </html>
