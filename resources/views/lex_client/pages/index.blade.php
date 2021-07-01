@@ -86,7 +86,7 @@
                     @else
                         <img src="{{asset('images/icons/law_icon.jpg')}}" style="border-radius: 50%" loading="lazy" alt="lawyer picture" class="image-3">
                     @endif
-                    <div class="head-2 lawyer_name">{{$lawyer->first_name}} {{$lawyer->last_name}}</div>
+                    <div class="head-2 lawyer_name">{{$lawyer->first_name ?? 'Lawyer First Name'}} {{$lawyer->last_name ?? 'Lawyer Last Name'}}</div>
                     <div class="text-block-8">{{$lawyer->title}}</div>
                 </div>
             </div>
