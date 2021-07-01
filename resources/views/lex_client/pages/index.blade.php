@@ -22,9 +22,11 @@
 
     <link rel="manifest" href="{{asset('manifest.json')}}">
 
-    <!--    calendly-->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <!-- end calendly -->
+    <!-- Calendly link widget begin -->
+    <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    <!-- Calendly link widget end -->
+
 </head>
 <body class="body">
 <a class="skip-link" href="#maincontent" style="display: none">Skip to main</a>
@@ -99,13 +101,13 @@
 </div>
 <footer id="footer" class="footer">
     <div class="container-9 w-container">
-        <a href="#" class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->call_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/phone.svg')}}" loading="lazy" alt="phone icon" class="image-12">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->call_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/phone.svg')}}" loading="lazy" alt="phone icon" class="image-12">
             <div class="text-block-23">Call</div>
         </a>
-        <a href="#" class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->video_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->video_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Video Call</div>
         </a>
-        <a href="#" class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->deposition_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
+        <a href="#." class="div-block-67 w-inline-block" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/{{$lawyer->deposition_url}}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f7f7f7&text_color=4f4f4f&primary_color=000000'});return false;"><img src="{{asset('images/icons/Zoom.svg')}}" loading="lazy" alt="zoom btn" class="image-13">
             <div class="text-block-23">Deposition</div>
         </a>
         <a href="{{route('client-profile.show', $client->id)}}" class="div-block-67 w-inline-block"><img src="{{asset('images/icons/Profile.svg')}}" loading="lazy" alt="profile icon" class="image-13">
