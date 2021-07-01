@@ -40,7 +40,8 @@
   }, {
       "src": "/images/icons/logo.png",
       "sizes": "50x45",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
   }, {
       "src": "/images/icons/logo.svg",
       "sizes": "238x201",
@@ -81,6 +82,11 @@
       "src": "/images/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+  }, {
+      "src": "/images/icons/ico/144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
   }
 
   ],
