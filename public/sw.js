@@ -2,7 +2,7 @@ const staticCacheName = 'static-cache-v0';
 const dynamicCacheName = 'dynamic-cache-v0';
 
 const staticAssets = [
-    '/offline',
+    // '/offline',
     './images/icons/icon-192x192.png',
     './images/icons/logo.png',
     './images/icons/logo.svg',
