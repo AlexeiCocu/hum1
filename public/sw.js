@@ -2,8 +2,7 @@ const staticCacheName = 'static-cache-v0';
 const dynamicCacheName = 'dynamic-cache-v0';
 
 const staticAssets = [
-    './',
-    // './index.php',
+    '/offline',
     './images/icons/icon-192x192.png',
     './images/icons/logo.png',
     './images/icons/logo.svg',
@@ -53,9 +52,11 @@ async function checkOnline(req) {
         const cachedRes = await cache.match(req);
         if(cachedRes){
             return cachedRes;
-        }else if(req.url.indexOf('.php') !== -1){
-            return caches.match('./offline.html');
-        }else{
+        }
+        // else if(req.url.indexOf('.php') !== -1){
+        //     return caches.match('offline');
+        // }
+        else{
             return await cache.match('./images/no-image.jpg');
         }
 
