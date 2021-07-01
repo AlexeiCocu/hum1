@@ -3,7 +3,7 @@ const dynamicCacheName = 'dynamic-cache-v0';
 
 const staticAssets = [
     './',
-    './index.php',
+    // './index.php',
     './images/icons/icon-192x192.png',
     './images/icons/logo.png',
     './images/icons/logo.svg',
