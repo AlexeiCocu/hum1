@@ -7,7 +7,7 @@ const staticAssets = [
     './images/icons/logo.png',
     './images/icons/logo.svg',
     './images/no-image.jpg',
-    './offline.html',
+    // './offline.html',
     './lex_client/css/ac-project-f6426e.webflow.css',
     './lex_client/css/normalize.css',
     './lex_client/css/webflow.css',
