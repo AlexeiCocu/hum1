@@ -4,7 +4,7 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
-    <title>Hummingbirdtrail | Profile</title>
+    <title>HummingbirdTrail | Profile</title>
     <meta content="Case information page" property="og:title">
     <meta content="Case information page" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">

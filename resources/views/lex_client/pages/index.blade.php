@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Hummingbirdtrail</title>
+    <title>HummingbirdTrail</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <meta content="description" name="description">
@@ -38,7 +38,7 @@
 </head>
 <body class="body">
 <a class="skip-link" href="#maincontent" style="display: none">Skip to main</a>
-<header class="section-7"><img src="{{asset('images/icons/logo.svg')}}" loading="lazy" alt="logo" class="image-14"></header>
+<header class="section-7"><img src="{{asset('images/icons/600.png')}}" loading="lazy" alt="logo" class="image-14"></header>
 <div id="maincontent" class="section">
     <div class="main_container w-container">
         <div class="w-layout-grid grid-3">
@@ -121,12 +121,12 @@
         <a href="{{route('client-profile.show', $client->id)}}" class="div-block-67 w-inline-block"><img src="{{asset('images/icons/Profile.svg')}}" loading="lazy" alt="profile icon" class="image-13">
             <div class="text-block-23">Profile</div>
         </a>
-        <a class="div-block-67 w-inline-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  href="{{ route('logout') }}">
-            <div class="text-block-23">Log Out</div>
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form>
+{{--        <a class="div-block-67 w-inline-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  href="{{ route('logout') }}">--}}
+{{--            <div class="text-block-23">Log Out</div>--}}
+{{--        </a>--}}
+{{--        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--            @csrf--}}
+{{--        </form>--}}
     </div>
 </footer>
 {{--<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60c3a5d304798b7da774cbd0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>--}}
