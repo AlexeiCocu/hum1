@@ -95,7 +95,9 @@
 
   ],
   "lang": "en",
-  "start_url": "/login",
+    "scope": "/",
+    "categories": ["business", "health", "medical"],
+  "start_url": "https://hummingbirdtrail.com/login",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#F8F8F8",
