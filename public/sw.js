@@ -1,7 +1,7 @@
 const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
-    './',
+    './login',
     './index.php',
     './js/serviceWorker.js',
     './lex_client/css/ac-project-f6426e.webflow.css',
