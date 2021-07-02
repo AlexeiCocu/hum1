@@ -3,7 +3,7 @@ const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
     '/',
     '/index.php',
-    './js/serviceWorker.js',
+    '/js/serviceWorker.js',
     '/lex_client/css/ac-project-f6426e.webflow.css',
     '/lex_client/css/normalize.css',
     '/lex_client/css/webflow.css',
