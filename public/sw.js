@@ -1,22 +1,22 @@
 const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
-    '/',
-    '/index.php',
-    '/js/serviceWorker.js',
-    '/lex_client/css/ac-project-f6426e.webflow.css',
-    '/lex_client/css/normalize.css',
-    '/lex_client/css/webflow.css',
+    './',
+    './index.php',
+    './js/serviceWorker.js',
+    './lex_client/css/ac-project-f6426e.webflow.css',
+    './lex_client/css/normalize.css',
+    './lex_client/css/webflow.css',
 
-    '/images/icons/icon-192x192.png',
-    '/images/icons/logo.png',
-    '/images/icons/logo.svg',
-    '/images/icons/icon_status.svg',
-    'images/icons/docsign.svg',
-    'images/icons/law_icon.jpg',
-    'images/icons/phone.svg',
-    'images/icons/Zoom.svg',
-    'images/icons/Profile.svg',
+    './images/icons/icon-192x192.png',
+    './images/icons/logo.png',
+    './images/icons/logo.svg',
+    './images/icons/icon_status.svg',
+    './images/icons/docsign.svg',
+    './images/icons/law_icon.jpg',
+    './images/icons/phone.svg',
+    './images/icons/Zoom.svg',
+    './images/icons/Profile.svg',
 
     // 'http://localhost:8000/',
 
