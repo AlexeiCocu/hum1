@@ -1,8 +1,8 @@
 const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
-    './',
-    './index.php',
+    '/',
+    // './index.php',
     './js/serviceWorker.js',
     './lex_client/css/ac-project-f6426e.webflow.css',
     './lex_client/css/normalize.css',
@@ -18,7 +18,7 @@ const assets = [
     './images/icons/Zoom.svg',
     './images/icons/Profile.svg',
 
-    'https://hummingbirdtrail.com/',
+    // 'https://hummingbirdtrail.com/',
 
     // 'http://localhost:8000/',
 
