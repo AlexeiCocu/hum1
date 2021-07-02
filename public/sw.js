@@ -44,9 +44,10 @@ self.addEventListener('install', evt => {
     evt.waitUntil(
         caches.open(staticCacheName).then((cache) => {
             console.log('caching shell assets');
-            cache.addAll(assets).then(r => {
-                console.log(r)
-            });
+            console.log(cache)
+            // cache.addAll(assets).then(r => {
+            //     console.log(r)
+            // });
         })
     );
 });
