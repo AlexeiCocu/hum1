@@ -3,7 +3,7 @@ const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
     '/',
     '/index.php',
-    '/js/serviceWorker.js',
+    './js/serviceWorker.js',
     '/lex_client/css/ac-project-f6426e.webflow.css',
     '/lex_client/css/normalize.css',
     '/lex_client/css/webflow.css',
@@ -17,6 +17,8 @@ const assets = [
     'images/icons/phone.svg',
     'images/icons/Zoom.svg',
     'images/icons/Profile.svg',
+
+    'http://localhost:8000/',
 
     'https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js',
     'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
