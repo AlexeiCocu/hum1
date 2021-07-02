@@ -18,6 +18,8 @@ const assets = [
     './images/icons/Zoom.svg',
     './images/icons/Profile.svg',
 
+    'https://hummingbirdtrail.com/',
+
     // 'http://localhost:8000/',
 
     'https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js',
