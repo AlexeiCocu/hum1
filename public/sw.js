@@ -18,7 +18,7 @@ const assets = [
     'images/icons/Zoom.svg',
     'images/icons/Profile.svg',
 
-    'http://localhost:8000/',
+    // 'http://localhost:8000/',
 
     'https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js',
     'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
