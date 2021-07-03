@@ -159,7 +159,7 @@ class ProfileController extends Controller
 
         $user->clientDetails()->update($dataClient);
 
-        return redirect()->route('login');
+        return redirect()->route('client-profile.show', $id);
     }
 
     /**
