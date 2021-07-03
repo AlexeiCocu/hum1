@@ -62,27 +62,45 @@ self.addEventListener('activate', evt => {
 
 
 // fetch event
-self.addEventListener('fetch', evt => {
-    //console.log('fetch event', evt);
+// self.addEventListener('fetch', evt => {
+//     //console.log('fetch event', evt);
+//
+//     evt.respondWith(
+//         caches.match(evt.request).then(cacheRes => {
+//             return cacheRes || fetch(evt.request)
+//                 .then(fetchRes => {
+//                     return caches.open(dynamicCacheName).then(cache => {
+//                         cache.put(evt.request.url, fetchRes.clone());
+//                         // check cached items size
+//                         limitCacheSize(dynamicCacheName, 15);
+//                         return fetchRes;
+//                     })
+//                 });
+//         }).catch(() => {
+//             if(evt.request.url.indexOf('.php') > -1){
+//                 alert('You a currently offline');
+//                 // return caches.match('/pages/fallback.html');
+//             }
+//         })
+//     );
+// });
 
+self.addEventListener('fetch', evt => {
+    let request = evt.request;
     evt.respondWith(
-        caches.match(evt.request).then(cacheRes => {
-            return cacheRes || fetch(evt.request)
-                .then(fetchRes => {
-                    return caches.open(dynamicCacheName).then(cache => {
-                        cache.put(evt.request.url, fetchRes.clone());
-                        // check cached items size
-                        limitCacheSize(dynamicCacheName, 15);
-                        return fetchRes;
+        fetch(evt.request)
+            .then(function (res) {
+                return caches.open(dynamicCacheName)
+                    .then(function(cache){
+                        cache.put(evt.request.url, res.clone());
+                        return res
                     })
-                });
-        }).catch(() => {
-            if(evt.request.url.indexOf('.php') > -1){
-                alert('You a currently offline');
-                // return caches.match('/pages/fallback.html');
-            }
-        })
-    );
-});
+            })
+            .catch(function (err) {
+                return caches.match(e.request)
+
+            })
+    )
+})
 
 
