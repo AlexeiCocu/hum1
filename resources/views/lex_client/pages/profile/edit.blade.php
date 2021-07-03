@@ -150,7 +150,7 @@
             </div>
 
 
-            <div class="div-block-62"><input type="submit" value="Save" data-wait="Please wait..." class="submit-button-2 w-button">
+            <div class="div-block-62"><button type="submit" class="submit-button-2 w-button">Save</button>
                 <a href="{{route('user-index')}}" class="button w-button">Cancel</a>
             </div>
             <div class="div-block-73">
@@ -183,5 +183,8 @@
             e2=object.value.indexOf('-')
             if(e1>-1&&e2>-1){if(e2-e1==4){cursorposition=cursorposition-1}}}else if(cursorposition<11){cursorposition=cursorposition+3}else if(cursorposition==11){cursorposition=cursorposition+1}else if(cursorposition>=12){cursorposition=cursorposition}var txtRange=object.createTextRange();txtRange.moveStart("character",cursorposition);txtRange.moveEnd("character",cursorposition-object.value.length);txtRange.select();}}function ParseChar(sStr,sChar){if(sChar.length==null){zChar=new Array(sChar);}else zChar=sChar;for(i=0;i<zChar.length;i++){sNewStr="";var iStart=0;var iEnd=sStr.indexOf(sChar[i]);while(iEnd!=-1){sNewStr+=sStr.substring(iStart,iEnd);iStart=iEnd+1;iEnd=sStr.indexOf(sChar[i],iStart);}sNewStr+=sStr.substring(sStr.lastIndexOf(sChar[i])+1,sStr.length);sStr=sNewStr;}return sNewStr;}</script>
 <!--   End Phone Formatting  -->
+
+<script src="{{asset('js/serviceWorker.js')}}"></script>
+
 </body>
 </html>

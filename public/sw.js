@@ -44,7 +44,6 @@ self.addEventListener('install', evt => {
 });
 
 
-
 // activate event
 self.addEventListener('activate', evt => {
     //console.log('service worker activated');
@@ -78,7 +77,6 @@ self.addEventListener('fetch', evt => {
                 });
         }).catch(() => {
             if(evt.request.url.indexOf('.php') > -1){
-
                 alert('You a currently offline');
                 // return caches.match('/pages/fallback.html');
             }
