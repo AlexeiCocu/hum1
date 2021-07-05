@@ -16,26 +16,26 @@ class UserSeeder extends Seeder
     {
         User::create([
             'first_name' => 'admin',
-            'last_name' => 'admin',
-            'email' => 'admin@mail.com',
-            'password' => bcrypt('123'),
+            'last_name' => '7lex',
+            'email' => 'admin@7lex.com',
+            'password' => bcrypt('JoeBlack2021'),
             'role_id' => 1
         ]);
 
-        User::create([
-            'first_name' => 'lawyer1',
-            'last_name' => 'lawyer1 last name',
-            'email' => 'lawyer1@mail.com',
-            'password' => bcrypt('123'),
-            'role_id' => 2
-        ]);
-
-        User::create([
-            'first_name' => 'client1',
-            'last_name' => 'user last name',
-            'email' => 'client1@mail.com',
-            'password' => bcrypt('123'),
-            'role_id' => 3
-        ]);
+//        User::create([
+//            'first_name' => 'lawyer1',
+//            'last_name' => 'lawyer1 last name',
+//            'email' => 'lawyer1@mail.com',
+//            'password' => bcrypt('123'),
+//            'role_id' => 2
+//        ]);
+//
+//        User::create([
+//            'first_name' => 'client1',
+//            'last_name' => 'user last name',
+//            'email' => 'client1@mail.com',
+//            'password' => bcrypt('123'),
+//            'role_id' => 3
+//        ]);
     }
 }
