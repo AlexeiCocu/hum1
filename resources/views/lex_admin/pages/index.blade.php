@@ -14,7 +14,7 @@
     <!-- END welcome -->
 
 
-    @include('lex_admin.inc.geolocation')
+
 
 
 @endsection
