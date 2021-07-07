@@ -90,7 +90,7 @@ class ClientController extends Controller
         $data = $request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'email' => 'required|string',
+            'email' => 'required|string|unique:users,email',
         ]);
         $data['role_id']  = 3;
         $data['password'] = Hash::make(123);

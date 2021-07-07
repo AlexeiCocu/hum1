@@ -55,7 +55,7 @@
             </div>
 
             <div class="div-block-61">
-                <div class="div-block-63"><label for="name-8" class="field-label">State</label></div>
+                <div class="div-block-63"><label for="State" class="field-label">State</label></div>
                 <div class="div-block-64"><select id="State" name="state" data-name="State" required="" class="select-field-9 w-select">
                         <option value="{{$client->state}}">{{$client->state}}</option>
                         <option value="Alabama">Alabama</option>
