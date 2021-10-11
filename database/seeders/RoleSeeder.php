@@ -14,19 +14,19 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::create([
-            'label' => 'Admin',
-            'role' => 'admin'
-        ]);
-
-        Role::create([
-            'label' => 'Lawyer',
-            'role' => 'lawyer'
-        ]);
-
-        Role::create([
-            'label' => 'Client',
-            'role' => 'client'
-        ]);
+//        Role::create([
+//            'label' => 'Admin',
+//            'role' => 'admin'
+//        ]);
+//
+//        Role::create([
+//            'label' => 'Lawyer',
+//            'role' => 'lawyer'
+//        ]);
+//
+//        Role::create([
+//            'label' => 'Client',
+//            'role' => 'client'
+//        ]);
     }
 }

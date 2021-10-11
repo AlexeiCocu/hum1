@@ -150,7 +150,7 @@
             </div>
 
 
-            <div class="div-block-62"><button type="submit" class="submit-button-2 w-button">Save</button>
+            <div class="div-block-62"><button type="submit" class="submit-button-2 w-button" style="background-color: red">Save</button>
                 <a href="{{route('user-index')}}" class="button w-button">Cancel</a>
             </div>
             <div class="div-block-73">

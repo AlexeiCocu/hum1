@@ -14,7 +14,4 @@
     <!-- END welcome -->
 
 
-
-
-
 @endsection
