@@ -18,9 +18,10 @@
     <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
     <link rel="shortcut icon" href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" type="image/x-icon">
     <link href="{{asset('lex_admin/assets/media/favicons/favicon.png')}}" rel="apple-touch-icon">
+    <link rel="stylesheet" href="{{asset('lex_client/css/custom.css')}}">
 
 {{--    @laravelPWA--}}
-    {{--END PWA--}}
+    {{-- PWA --}}
     <meta name="theme-color" content="red">
     <link rel="manifest" href="{{asset('manifest.json')}}">
     {{--    @laravelPWA--}}
@@ -28,10 +29,11 @@
 </head>
 <body class="body">
 <header id="nav" class="sticky-nav">
+    <a href="{{route('client-profile.show', $client->id)}}" class="div-block-23 w-inline-block">
+        <img src="{{asset('lex_client/images/arrow_left.svg')}}" loading="lazy" alt="arrow left" class="image-8">
+        <div class="text-block-11">Back</div>
+    </a>
     <nav class="container-6 w-container">
-        <a href="{{route('client-profile.show', $client->id)}}" class="div-block-23 w-inline-block"><img src="{{asset('lex_client/images/arrow_left.svg')}}" loading="lazy" alt="arrow left" class="image-8">
-            <div class="text-block-11">Back</div>
-        </a>
         <div class="div-block-60">
             <div class="text-block-19">Edit Your Data</div>
         </div>
@@ -150,11 +152,13 @@
             </div>
 
 
-            <div class="div-block-62"><button type="submit" class="submit-button-2 w-button" style="background-color: red">Save</button>
-                <a href="{{route('user-index')}}" class="button w-button">Cancel</a>
+            <div class="div-block-62">
+                <button type="submit" class="submit-button-2 w-button">SAVE</button>
+                <a href="{{route('user-index')}}" class="button w-button">CANCEL</a>
             </div>
             <div class="div-block-73">
-                <div class="div-block-74"><img src="{{asset('lex_client/images/i_icon.svg')}}" alt="info icon">
+                <div class="div-block-74">
+                    <img src="{{asset('lex_client/images/i_icon.svg')}}" alt="info icon">
                     <div class="text-block-13" style="margin-left: 5px">On this page you can edit profile information</div>
                 </div>
             </div>
