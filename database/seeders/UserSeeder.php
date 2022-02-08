@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
 //            'password' => bcrypt('JoeBlack2021'),
 //            'role_id' => 1
 //        ]);
-
+//
 //        User::create([
 //            'first_name' => 'lawyer1',
 //            'last_name' => 'lawyer1 last name',

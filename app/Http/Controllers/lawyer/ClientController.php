@@ -95,7 +95,7 @@ class ClientController extends Controller
         $data['role_id']  = 3;
         $data['password'] = Hash::make(123);
 
-        $user = User::create($data);
+        $user = User::query()->create($data);
 
 //        dd(Auth::id());
 

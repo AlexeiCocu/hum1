@@ -137,12 +137,12 @@
             <img src="{{asset('images/icons/Profile.svg')}}" alt="profile icon" class="footer_icon">
             <div class="text-block-23">Profile</div>
         </a>
-{{--                <a class="a_footer" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  href="{{ route('logout') }}">--}}
-{{--                    <div class="text-block-23">Log Out</div>--}}
-{{--                </a>--}}
-{{--                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                    @csrf--}}
-{{--                </form>--}}
+                <a class="a_footer" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  href="{{ route('logout') }}">
+                    <div class="text-block-23">Log Out</div>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
 
 </footer>
 
