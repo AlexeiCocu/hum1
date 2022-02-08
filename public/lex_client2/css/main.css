@@ -1,0 +1,365 @@
+.body {
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+
+    /*background-color: #ffffff;*/
+    /*background-image: linear-gradient(315deg, #30465f 0%, #a9def3 74%);*/
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /*height: 100vh;*/
+
+    font-family: Inter, sans-serif;
+
+    margin: 0;
+}
+
+.main_section {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    /*height: 100vh;*/
+    padding: 20px;
+}
+
+.logo_bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid_container {
+    max-width: 1024px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "card1 card1 card2"
+    "card_sign card_sign card_sign"
+    "card3 card4 card4"
+;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card_sign {
+    grid-area: card_sign;
+}
+
+.card_box{
+    min-width: 160px;
+    min-height: 100px;
+    background: rgba(255,255,255, 0.6);
+
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);*/
+
+    border-radius: 20px;
+
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.text_center {
+    text-align: center;
+}
+
+
+.head1 {
+    color: #424242;
+    font-size: 26px;
+}
+
+.head2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card1_text_container{
+    width:100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center
+}
+
+.sign_card{
+    background: rgba(255,255,255, 0.8);
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+}
+
+.sign_card_text_container{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.main_btn-2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 143px;
+    height: 34px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #e7152a;
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 400;
+}
+
+.a_docusign{
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.text-block-26 {
+    color: #fff;
+    font-weight: 500;
+}
+
+.text-block-3 {
+    margin-top: 5px;
+    text-decoration: underline;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    color: #3b3a3a;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.text {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.text.info{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.icon_case_status {
+    width: 68px;
+    height: 71px;
+    margin-top: 13px;
+    margin-bottom: 6px;
+}
+
+.lawyer_img {
+    border-radius: 50%;
+    width: 85px;
+    height: 84px;
+}
+
+.lawyer_name{
+    margin-top: 10px;
+}
+
+
+.text-block-8 {
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+}
+
+
+.footer {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+
+    position: sticky;
+    bottom: 0;
+
+
+    background: rgba(255,255,255, 0.8);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+
+.a_footer {
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+    align-items: center;
+}
+
+
+.text-block-23 {
+    color: #141414;
+    font-size: 9px;
+    line-height: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.footer_icon {
+    width: 30px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+
+@media (max-width: 1060px){
+    .footer {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media (max-width: 821px){
+    .a_footer {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .footer_icon{
+        margin: 0 0 5px 0;
+    }
+
+    .card_box {
+        padding: 20px;
+    }
+
+    .icon_case_status {
+        width: 30px;
+        height: 34px;
+        margin-top: 13px;
+        margin-bottom: 6px;
+    }
+}
+
+
+@media (max-width: 668px){
+    .grid_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "card1 card1 card1 card2"
+            "card_sign card_sign card_sign card_sign"
+            "card3 card4 card4 card4"
+    ;
+    }
+}
+
+@media (max-width: 594px){
+    .grid_container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card_sign"
+            "card3"
+            "card4"
+    ;
+    }
+}
+
+@media (max-width: 425px){
+    .text {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .sign_card_text_container > .head1{
+        font-size: 22px;
+    }
+
+    .main_btn-2{
+        width: 95px;
+    }
+
+    .a_docusign{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text.info{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .main_section{
+        background-size: contain !important;
+    }
+}
+
+
+@media (max-width: 320px){
+
+    .head1 {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .sign_card_text_container > .head1{
+        font-size: 20px;
+    }
+
+    .main_btn-2{
+        width: 95px;
+    }
+
+    .sign_card{
+        flex-direction: column;
+    }
+
+    .text.info{
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
