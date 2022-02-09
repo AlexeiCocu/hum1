@@ -6,9 +6,9 @@
     /*background-image: linear-gradient(315deg, #30465f 0%, #a9def3 74%);*/
 
     display: grid;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: center;
-    /*height: 100vh;*/
+    height: 100vh;
 
     font-family: Inter, sans-serif;
 
@@ -21,8 +21,15 @@
     background-attachment: fixed;
     background-position: center;
 
-    height: 100vh;
-    padding: 20px;
+    height: 100%;
+    padding: 0 20px 0 20px;
+
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
 }
 
 .logo_bg{
@@ -205,12 +212,24 @@
 
 .footer {
 
+    max-width: 1024px;
+    position: sticky;
+    top: auto;
+    bottom: 0;
+
+
+    margin-top: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    text-align: center;
+
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
 
-    position: sticky;
-    bottom: 0;
+
 
 
     background: rgba(255,255,255, 0.8);
@@ -277,6 +296,8 @@
         margin-top: 13px;
         margin-bottom: 6px;
     }
+
+
 }
 
 
@@ -301,6 +322,10 @@
             "card3"
             "card4"
     ;
+    }
+
+    .body{
+        height: 100%;
     }
 }
 
@@ -332,6 +357,8 @@
     .main_section{
         background-size: contain !important;
     }
+
+
 }
 
 
