@@ -156,20 +156,40 @@
           item.classList.add('mention_row');
       }
 
-  }))
+  }));
+
+    document.querySelector('.body').addEventListener('click', function (e) {
+
+        console.log(e.target)
+
+        if(e.target.classList.contains("body") ||
+            e.target.classList.contains("card_box") ||
+            e.target.classList.contains("footer") ||
+            e.target.classList.contains("arrow_left_btn") ||
+            e.target.classList.contains("edit_btn")){
+            removeRowBackground();
+        }
+    })
 
 
     // change arrow icon color on click
     const arrow_left_btn = document.querySelector('.arrow_left_btn');
     arrow_left_btn.addEventListener('click', function () {
-        document.querySelector('.arrow_left').style.fill = '#e7152a'
+        document.querySelector('.arrow_left').style.fill = '#e7152a';
+
+        setTimeout(()=>{
+            document.querySelector('.arrow_left').style.fill = '#424242';
+        }, 1000)
     })
 
 
     // change edit icon color on click
     const edit_btn = document.querySelector('.edit_btn');
     edit_btn.addEventListener('click', function () {
-        document.querySelector('.edit_icon').style.fill = '#e7152a'
+        document.querySelector('.edit_icon').style.fill = '#e7152a';
+        setTimeout(()=>{
+            document.querySelector('.edit_icon').style.fill = '#424242';
+        }, 1000)
     })
 
 
